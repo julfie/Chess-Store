@@ -12,7 +12,6 @@
 
   <body>
     <div id="title_area">
-      <%= link_to image_tag('chess_store_title.png'), home_path %>
     </div>
     <%= render :partial => "partials/nav" %>
     
@@ -22,11 +21,13 @@
         <%= yield %>
       </div>
     </div>
+
     <footer>
       <div class="small-12 columns" id="footer">
         <%= render partial: 'partials/footer' %>
       </div>
     </footer> 
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

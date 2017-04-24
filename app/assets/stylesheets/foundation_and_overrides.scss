@@ -1234,11 +1234,36 @@ $topbar-bg: $topbar-bg-color;
 }
 
 #title_area {
-  background-color: #ffffff;
+  background-color: black;
+}
+
+#title_area img {
+  margin: 1em 5em;
+  width: 15% !important;
+}
+
+.top-bar-section #logo {
+  width: 35%;
+  background: transparent !important;
+  margin-right: 13rem;
+}
+
+.top-bar {
+  padding: 1rem 0 !important; 
+}
+
+.top-bar
+.top-bar-section .left {
+  background-color: black;
+}
+
+.top-bar
+.top-bar-section .left ul li {
+  background-color: black;
 }
 
 #main_content {
-  margin-top: 10px;
+  margin-top: 3em;
 }
 
 #footer {
@@ -1246,17 +1271,17 @@ $topbar-bg: $topbar-bg-color;
   padding-top: 0px;
   padding-bottom: 15px;
   background-color:#ffffff;
-  color: #6493ba;
+  color: black;
   text-align: center;
 }
 
 #footer a {
-  color: #7f9eb8;
+  color: #333333;
   text-decoration: none;
 }
 
 #footer a:hover {
-  color: #7f9eb8;
+  color: #baca43;
   text-decoration: underline;
 }
 
