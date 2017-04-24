@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :schools
+  resources :users
+  resources :orders
   # Routes for main resources
   resources :items
   resources :purchases
