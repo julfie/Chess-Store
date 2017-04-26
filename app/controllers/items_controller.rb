@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   # before_action :check_login
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  authorize resource
 
   def index
     # get info on active items for the big three...
