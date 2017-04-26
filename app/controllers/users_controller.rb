@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :check_login
+  authorize resource
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.alphabetical.paginate(:page => params[:page]).per_page(7)
   end
 
   # GET /users/1
@@ -29,11 +30,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        session[:user_id] = @user.id
+        redirect_to home_path, notice: "Thank you for signing up!"
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        flash[:error] = "This user could not be created."
+        render "new"
       end
     end
   end
@@ -70,6 +71,10 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+      if current_user && current_user.role?(:admin)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :role, :active)  
+      else
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :active)
+      end
     end
 end
