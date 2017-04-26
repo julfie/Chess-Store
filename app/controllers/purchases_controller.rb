@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
   before_action :check_login
-  authorize resource
+  authorize_resource
   
   def index
     @purchases = Purchase.chronological.to_a
