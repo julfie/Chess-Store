@@ -12,9 +12,11 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'view', order %></td>
+        <td><%= order.school.name %></td>
+        <td><%= order.user.name %></td>
+        <td><%= order.date %></td>
+        <td><%= order.grand_total.round(2) %></td>
       </tr>
     <% end %>
   </tbody>
