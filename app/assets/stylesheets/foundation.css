@@ -1730,7 +1730,7 @@ meta.foundation-mq-topbar {
 
 .top-bar {
   background: black;
-  height: 7rem;
+  height: auto;
   line-height: 2.8125rem;
   margin-bottom: 0;
   overflow: hidden;
@@ -1851,7 +1851,7 @@ meta.foundation-mq-topbar {
       color: #FFFFFF;
       display: block;
       font-family: "Neou-Thin", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-      font-size: 1rem;
+      font-size: .85rem;
       font-weight: Thin;
       padding-left: 0.9375rem;
       padding: 12px 0 12px 0.9375rem;

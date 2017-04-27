@@ -1243,23 +1243,27 @@ $topbar-bg: $topbar-bg-color;
 }
 
 .top-bar-section #logo {
-  width: 35%;
+  width: 30%;
   background: transparent !important;
-  margin-right: 13rem;
+  // margin-right: 13rem;
 }
 
-.top-bar {
-  padding: 1rem 0 !important; 
+.top-bar-section .login{
+  color: #baca43;
+  font-size: .8rem !important;
+  line-height: 2.8125rem !important;
 }
 
-.top-bar
-.top-bar-section .left {
-  background-color: black;
+.top-bar-section .has-dropdown .login{
+  color: #baca43;
+  font-size: .75rem !important;
+  line-height: 2.8125rem !important;
 }
 
-.top-bar
-.top-bar-section .left ul li {
-  background-color: black;
+.top-bar-section .dropdown .login {
+  color: white;
+  font-size: .75rem !important;
+  line-height: 2.8125rem !important;
 }
 
 #main_content {
