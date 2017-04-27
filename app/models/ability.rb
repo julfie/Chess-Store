@@ -10,77 +10,79 @@ class Ability
     alias_action :create, :read, :to => :cr
   
 # ADMIN ABILITIES
-  if user.role? :admin
-    # they get to do it all
-    can :manage, :all
+    if user.role? :admin
+      # they get to do it all
+      can :manage, :all
 
 # MANAGER ABILITIES
-  elsif user.role? :manager
-    # can read anything
-    can :index, :all
-    can :show, :all
+    elsif user.role? :manager
+      # can read anything
+      can :index, :all
+      can :show, :all
 
-    # can create, edit and read employee data
-    can :manage, User, :id => User.employees
+      # can create, edit and read employee data
+      can :manage, User, :id => User.employees
 
-    # can create, edit and read items in the system
-    can :crud, Item
+      # can create, edit and read items in the system
+      can :crud, Item
 
-    # can read full price history & create new prices
-    can :cr, ItemPrice
+      # can read full price history & create new prices
+      can :cr, ItemPrice
 
-    # can add purchases
-    can :create, Purchase 
+      # can add purchases
+      can :create, Purchase 
 
-    # can read information about customers, schools and orders 
-    can :read, User, :id => User.customers
-    can :read, School 
-    can :read, Order
+      # can read information about customers, schools and orders 
+      can :read, User, :id => User.customers
+      can :read, School 
+      can :read, Order
 
 # SHIPPER ABILITIES
-  elsif user.role? :shipper
-    # they can read & edit their own profile
-    can :show, User, :id => user.id
-    can :edit, User, :id => user.id
+    elsif user.role? :shipper
+      # they can read & edit their own profile
+      can :show, User, :id => user.id
+      can :edit, User, :id => user.id
 
-    # can read unshipped orders
-    can :index, Order, :id => Order.unshipped
-    can :show, Order, :id => Order.unshipped
+      # can read unshipped orders
+      can :index, Order, :id => Order.unshipped
+      can :show, Order, :id => Order.unshipped
 
-    # can view items
-    can :show, Item
+      # can view items
+      can :show, Item
 
 # CUSOTMER ABILITIES
-  elsif user.role? :customer
-    # they can read & edit their own profile
-    can :show, User, :id => user.id
-    can :edit, User, :id => user.id
-    can :delete, User, :id => user.id
+    elsif user.role? :customer
+      # they can read & edit their own profile
+      can :show, User, :id => user.id
+      can :edit, User, :id => user.id
+      can :delete, User, :id => user.id
 
-    # can place orders or cancel unshipped orders
-    can :create, Order
-    can :destroy, Order
+      # can place orders or cancel unshipped orders
+      can :create, Order
+      can :destroy, Order
 
-    #can view list of and details of active items
-    can :index, Item, :active => true
-    can :show, Item, :active => true
+      #can view list of and details of active items
+      can :index, Item, :active => true
+      can :show, Item, :active => true
 
-    # can see list/details of their own past orders
-    can :index, Order, :user_id => User.id
-    can :show, Order, :user_id => User.id
+      # can see list/details of their own past orders
+      can :index, Order, :user_id => User.id
+      can :show, Order, :user_id => User.id
 
-    # can add their schools
-    can :create, School
+      # can add their schools
+      can :create, School
 
 # GUEST ABILITIES
-  else
-    # can view list of and details of active items
-    can :index, Item, :active => true
-    can :show, Item, :active => true
+    else
+      # can view list of and details of active items
+      can :index, Item, :active => true
+      can :show, Item, :active => true
 
-    # can create new user accounts and add their schools
-    can :create, User
-    can :create, School
+      # can create new user accounts and add their schools
+      can :create, User
+      can :create, School
 
+      # can :home, Home
+    end
   end
 end

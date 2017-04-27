@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   # before_action :check_login
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
   authorize_resource
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     # get info on active items for the big three...
@@ -10,7 +10,11 @@ class ItemsController < ApplicationController
     @clocks = Item.active.for_category('clocks').alphabetical.paginate(:page => params[:page]).per_page(10)
     @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10)    
     # get a list of any inactive items for sidebar
-    @inactive_items = Item.inactive.alphabetical.to_a
+    if logged_in?
+      if (current_user.role? admin) || (current_user.role? manager)
+        @inactive_items = Item.inactive.alphabetical.to_a
+      end
+    end
   end
 
   def show

@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :check_login
   authorize_resource
+  before_action :check_login
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json
