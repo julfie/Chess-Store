@@ -13,6 +13,7 @@ class Ability
     if user.role? :admin
       # they get to do it all
       can :manage, :all
+      can :see_reorders, Item
 
 # MANAGER ABILITIES
     elsif user.role? :manager
@@ -25,6 +26,7 @@ class Ability
 
       # can create, edit and read items in the system
       can :crud, Item
+      can :see_reorders, Item
 
       # can read full price history & create new prices
       can :cr, ItemPrice
