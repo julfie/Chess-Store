@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   
   def home
     if logged_in?
-      if (current_user.role? admin) || (current_user.role? manager)
+      if (current_user.role? :admin) || (current_user.role? :manager)
         @items_to_reorder = Item.need_reorder.alphabetical.to_a
       end
     end
