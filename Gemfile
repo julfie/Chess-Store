@@ -32,8 +32,8 @@ gem 'validates_timeliness'
 gem 'cancancan', '1.15.0'
 gem 'simple_form'
 gem 'will_paginate'
-gem 'foundation-rails'
-gem 'font-awesome-sass-rails'
+gem 'foundation-rails', '~> 6.3'
+gem 'font-awesome-sass'
 gem 'carrierwave', '1.0.0'
 
 group :development, :test do
