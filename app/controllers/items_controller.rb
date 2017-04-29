@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
     @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10)    
     # get a list of any inactive items for sidebar
     if logged_in?
-      if (current_user.role? admin) || (current_user.role? manager)
+      if (current_user.role? :admin) || (current_user.role? :manager)
         @inactive_items = Item.inactive.alphabetical.to_a
       end
     end

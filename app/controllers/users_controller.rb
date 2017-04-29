@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  authorize resource
+  authorize_resource
   before_action :check_login
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
