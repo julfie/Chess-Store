@@ -93,34 +93,33 @@
   font-weight: normal;
 }
 
-#title_area {
+.top-bar {
   background-color: black;
 }
 
-#title_area img {
-  margin: 1em 5em;
-  width: 15% !important;
-}
-
-.top-bar-section #logo {
+.top-bar-title a img {
   width: 30%;
   background: transparent !important;
-  // margin-right: 13rem;
 }
 
-.top-bar-section .login{
+.top-bar .login{
   color: #baca43;
   font-size: .8rem !important;
-  line-height: 2.8125rem !important;
+  line-height: 1.5rem !important;
+  background-color: black;
+  padding: 1px;
+  padding-top: 5px;
 }
 
-.top-bar-section .has-dropdown .login{
-  color: #baca43;
-  font-size: .75rem !important;
-  line-height: 2.8125rem !important;
+.top-bar, .top-bar ul{
+  color: white;
+  background: black;
+  font-size: 1.5rem !important;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.top-bar-section .dropdown .login {
+ul.is-dropdown-submenu-item {
   color: white;
   font-size: .75rem !important;
   line-height: 2.8125rem !important;

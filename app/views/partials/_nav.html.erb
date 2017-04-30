@@ -27,37 +27,41 @@
   </nav>
   
   <nav class="top-bar" data-topbar role="navigation"> 
-    <section class="top-bar-section">
-      <div class="float-left" id='logo'>
-          <%= link_to image_tag('logo.png'), home_path %>
+      <div class="top-bar-title" id='logo'>
+        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+          <button class="menu-icon dark" type="button" data-toggle></button>
+        </span>
+        <%= link_to image_tag('logo.png'), home_path %>
       </div>
-      <ul class="float-right">
-        <!-- link to home -->
-        <li><%= link_to "Home", home_path %></li>
+      <div id="responsive-menu">
+        <div class="top-bar-right">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <!-- link to home -->
+            <li><%= link_to "Home", home_path %></li>
 
-        <!-- options for items -->
-        <li class="has-dropdown">
-          <%= link_to "Items", items_path %>
-          <ul class="dropdown">
-            <li><%= link_to "Item List", items_path %></li>
-            <li><%= link_to "Reorder List", home_path %></li>
-            <li><%= link_to "Add an Item", new_item_path %></li>
+            <!-- options for items -->
+            <li>
+              <%= link_to "Items", items_path %>
+              <ul class="menu vertical">
+                <li><%= link_to "Item List", items_path %></li>
+                <li><%= link_to "Reorder List", home_path %></li>
+                <li><%= link_to "Add an Item", new_item_path %></li>
+              </ul>
+            </li>
+
+            <!-- options for purchases -->
+            <li>
+              <%= link_to "Purchases", purchases_path %>
+            </li>
+
+            <!-- options for prices -->
+            <li>
+              <%= link_to "Prices", item_prices_path %>
+            </li>
           </ul>
-        </li>
-
-        <!-- options for purchases -->
-        <li>
-          <%= link_to "Purchases", purchases_path %>
-        </li>
-
-        <!-- options for prices -->
-        <li>
-          <%= link_to "Prices", item_prices_path %>
-        </li>
-      </ul>
-
+        </div>
+      </div>
       </br>
 
-    </section>
   </nav>
 </div>
