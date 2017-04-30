@@ -9,6 +9,9 @@ class HomeController < ApplicationController
     end
   end
 
+  def dashboard
+  end
+
   def about
   end
 

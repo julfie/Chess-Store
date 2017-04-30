@@ -1,0 +1,22 @@
+<div class="row">
+  <% if can? :basic_dash, @user %>
+    BASIC
+  <% end %>
+
+  <% if can? :admin_dash, @user %>
+    ADMIN
+  <% end %>
+
+  <% if can? :manager_dash, @user %>
+    MANAGER
+  <% end %>
+
+  <% if can? :shipper_dash, @user %>
+    SHIPPER
+  <% end %>
+
+  <div class="small-7 columns">
+  </div>
+  <div class="small-5 columns">
+  </div>
+</div>

@@ -14,6 +14,10 @@ class Ability
       # they get to do it all
       can :manage, :all
       can :see_reorders, Item
+      can :admin_dash
+      cannot :manager_dash
+      cannot :shipper_dash
+      cannot :basic_dash
 
 # MANAGER ABILITIES
     elsif user.role? :manager
@@ -39,6 +43,10 @@ class Ability
       can :read, School 
       can :read, Order
 
+      can :manager_dash
+      cannot :shipper_dash
+      cannot :basic_dash
+
 # SHIPPER ABILITIES
     elsif user.role? :shipper
       # they can read & edit their own profile
@@ -51,6 +59,9 @@ class Ability
 
       # can view items
       can :show, Item
+
+      can :shipper_dash
+      cannot :basic_dash
 
 # CUSOTMER ABILITIES
     elsif user.role? :customer
@@ -73,6 +84,7 @@ class Ability
 
       # can add their schools
       can :create, School
+      can :basic_dash
 
 # GUEST ABILITIES
     else
@@ -84,7 +96,8 @@ class Ability
       can :create, User
       can :create, School
 
-      # can :home, Home
+      can :basic_dash
+
     end
   end
 end
