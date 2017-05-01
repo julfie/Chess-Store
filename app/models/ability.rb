@@ -85,6 +85,7 @@ class Ability
       # can add their schools
       can :create, School
       can :basic_dash
+      can :basic_nav
 
 # GUEST ABILITIES
     else
@@ -97,6 +98,7 @@ class Ability
       can :create, School
 
       can :basic_dash
+      can :basic_nav
 
     end
   end
