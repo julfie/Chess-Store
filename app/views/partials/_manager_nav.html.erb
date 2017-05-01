@@ -1,0 +1,22 @@
+<!-- link to home -->
+<li><%= link_to "Home", home_path %></li>
+
+<!-- options for items -->
+<li>
+  <%= link_to "Items", items_path %>
+  <ul class="menu vertical">
+    <li><%= link_to "Item List", items_path %></li>
+    <li><%= link_to "Reorder List", home_path %></li>
+    <li><%= link_to "Add an Item", new_item_path %></li>
+  </ul>
+</li>
+
+<!-- options for purchases -->
+<li>
+  <%= link_to "Purchases", purchases_path %>
+</li>
+
+<!-- options for prices -->
+<li>
+  <%= link_to "Prices", item_prices_path %>
+</li>
