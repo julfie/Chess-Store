@@ -1,0 +1,18 @@
+<div class="row align-center">
+
+  <% unless @unshipped_orders.nil? || @unshipped_orders.empty? %>
+
+    <div class="small-8 column">
+      <%= render :partial => 'unshipped' %>
+    </div>
+
+    <div class="small-4 column">
+      <%= render :partial => 'current_ship_address' %>
+    </div>
+
+  <% else %>
+    <p><strong>All orders shipped. Good work!</strong></p>
+    
+  <% end %>
+  
+</div>

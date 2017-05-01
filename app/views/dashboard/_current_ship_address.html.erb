@@ -1,0 +1,22 @@
+</br> </br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Current Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= @unshipped_orders.first.school.street_1 %>,</br>
+        <% unless @unshipped_orders.first.school.street_2.nil? %>
+          <%= @unshipped_orders.first.school.street_2 %></br>
+        <% end %>
+        <%= @unshipped_orders.first.school.city %></br>
+        <%= @unshipped_orders.first.school.state %>, 
+        <%= @unshipped_orders.first.school.zip %>
+      </td>
+    </tr>
+  </tbody>
+</table>

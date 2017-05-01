@@ -54,8 +54,8 @@ class Ability
       can :edit, User, :id => user.id
 
       # can read unshipped orders
-      can :index, Order, :id => Order.unshipped
-      can :show, Order, :id => Order.unshipped
+      can :index, Order, :id => Order.not_shipped
+      can :show, Order, :id => Order.not_shipped
 
       # can view items
       can :show, Item
