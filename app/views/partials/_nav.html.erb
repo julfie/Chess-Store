@@ -13,13 +13,13 @@
         <div class="top-bar-right">
           <ul class="dropdown menu" data-dropdown-menu>
             <% if can? :admin_nav, @user %>
-              <%= render :partial => 'partials/admin_nav' %>
+              <%= render :partial => 'partials/nav/admin_nav' %>
             <% elsif can? :manager_nav, @user %>
-              <%= render :partial => 'partials/manager_nav' %>
+              <%= render :partial => 'partials/nav/manager_nav' %>
               <% elsif can? :shipper_nav, @user %>
-              <%= render :partial => 'partials/shipper_nav' %>
+              <%= render :partial => 'partials/nav/shipper_nav' %>
             <% else %>
-              <%= render :partial => 'partials/base_nav' %>
+              <%= render :partial => 'partials/nav/base_nav' %>
             <% end %>
           </ul>
         </div>
