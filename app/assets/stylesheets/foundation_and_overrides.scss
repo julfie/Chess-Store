@@ -9,43 +9,7 @@
 
 // We include everything by default.  To slim your CSS, remove components you don't use.
 
-@include foundation-global-styles;
-@include foundation-grid;
-@include foundation-typography;
-@include foundation-button;
-@include foundation-forms;
-@include foundation-visibility-classes;
-@include foundation-float-classes;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
-@include foundation-button-group;
-@include foundation-callout;
-@include foundation-card;
-@include foundation-close-button;
-@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
-@include foundation-responsive-embed;
-@include foundation-label;
-@include foundation-media-object;
-@include foundation-menu;
-@include foundation-menu-icon;
-@include foundation-off-canvas;
-@include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
-@include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
-@include foundation-switch;
-@include foundation-table;
-@include foundation-tabs;
-@include foundation-thumbnail;
-@include foundation-title-bar;
-@include foundation-tooltip;
-@include foundation-top-bar;
+@include foundation-everything;
 
 // If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
 //
@@ -72,16 +36,6 @@
   margin-left: 330px;
 }
 
-.project_item {
-  background-color: #d1ecfb;
-  width: 400px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid blue;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
 .supertiny {
   font-size:5px;
   text-decoration:none;
@@ -97,18 +51,27 @@
   background-color: black;
 }
 
+.top-bar-title {
+  width: 35%;
+}
+
 .top-bar-title a img {
-  width: 30%;
+  width: 50%;
   background: transparent !important;
 }
 
 .top-bar .login{
   color: #baca43;
-  font-size: .8rem !important;
-  line-height: 1.5rem !important;
+  font-size: 1.2rem !important;
+  line-height: 1rem !important;
   background-color: black;
   padding: 1px;
-  padding-top: 5px;
+}
+
+.top-bar-right {
+  margin: 0 auto;
+  padding-top: auto;
+  padding-bottom: auto;
 }
 
 .top-bar, .top-bar ul{
