@@ -18,6 +18,7 @@ class Ability
       cannot :manager_dash
       cannot :shipper_dash
       cannot :basic_dash
+      can :admin_nav
 
 # MANAGER ABILITIES
     elsif user.role? :manager
@@ -46,6 +47,7 @@ class Ability
       can :manager_dash
       cannot :shipper_dash
       cannot :basic_dash
+      can :manager_nav
 
 # SHIPPER ABILITIES
     elsif user.role? :shipper
