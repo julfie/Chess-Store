@@ -62,6 +62,7 @@ class Ability
 
       can :shipper_dash
       cannot :basic_dash
+      can :shipper_nav
 
 # CUSOTMER ABILITIES
     elsif user.role? :customer
