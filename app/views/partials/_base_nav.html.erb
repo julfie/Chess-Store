@@ -1,0 +1,22 @@
+<!-- link to home -->
+<li><%= link_to "Home", home_path %></li>
+
+<!-- options for items -->
+<li>
+  <%= link_to "Items", items_path %>
+  <ul class="menu vertical">
+    <li><%= link_to "Item List", items_path %></li>
+    <li><%= link_to "Reorder List", home_path %></li>
+    <li><%= link_to "Add an Item", new_item_path %></li>
+  </ul>
+</li>
+
+<!-- options for Contact -->
+<li>
+  <%= link_to "Contact", contact_path %>
+</li>
+
+<!-- options for How To Play -->
+<li>
+  <%= link_to "How To Play", howto_path %>
+</li>
