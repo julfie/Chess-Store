@@ -15,9 +15,6 @@ class Ability
       can :manage, :all
       can :see_reorders, Item
       can :admin_dash
-      cannot :manager_dash
-      cannot :shipper_dash
-      cannot :basic_dash
       can :admin_nav
 
 # MANAGER ABILITIES
@@ -45,8 +42,6 @@ class Ability
       can :read, Order
 
       can :manager_dash
-      cannot :shipper_dash
-      cannot :basic_dash
       can :manager_nav
 
 # SHIPPER ABILITIES
@@ -63,7 +58,6 @@ class Ability
       can :show, Item
 
       can :shipper_dash
-      cannot :basic_dash
       can :shipper_nav
 
 # CUSOTMER ABILITIES

@@ -1,18 +1,16 @@
 <div class="row">
-  <% if can? :basic_dash, @user %>
-    <%= render :partial => 'base_dash' %>
-  <% end %>
 
   <% if can? :admin_dash, @user %>
     <%= render :partial => 'admin_dash' %>
-  <% end %>
 
-  <% if can? :manager_dash, @user %>
+  <% elsif can? :manager_dash, @user %>
     <%= render :partial => 'manager_dash' %>
-  <% end %>
 
-  <% if can? :shipper_dash, @user %>
+  <% elsif can? :shipper_dash, @user %>
     <%= render :partial => 'shipper_dash' %>
+
+  <% else %>
+    <%= render :partial => 'base_dash' %>
   <% end %>
 
   <div class="small-7 columns">
