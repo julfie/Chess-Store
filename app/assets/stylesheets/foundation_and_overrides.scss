@@ -74,6 +74,24 @@ ul.dropdown.menu .login{
 
 a.login {
   color: #baca43;
+  font-size: 1rem;
+}
+
+.card.dash {
+  position: absolute;
+  background-color: transparent;
+  border: 0px;
+  left: 60%;
+  top: 30em;
+  padding-top: 1rem;
+  
+}
+
+.card.dash a {
+  color: white;
+  font-family: 'Neou-thin';
+  font-size: 2.25rem;
+  line-height: 2rem;
 }
 
 .float-right {
@@ -99,6 +117,7 @@ a.login {
   left: -0.5%; 
   width: 101%; 
   height: 100%;
+  z-index: -1;
 }
 
 #base-dash html { 
