@@ -88,17 +88,39 @@ ul.is-dropdown-submenu-item {
   line-height: 2.8125rem !important;
 }
 
+#base-dash {
+  position: fixed; 
+  left: -0.5%; 
+  width: 101%; 
+  height: 100%;
+}
+
+#base-dash html { 
+  background: url(dash_bg.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #main_content {
   margin-top: 3em;
+}
+
+.dash-flash {
+  margin-top: 2.8em;  
 }
 
 #footer {
   margin-top: 15px;
   padding-top: 0px;
   padding-bottom: 15px;
-  background-color:#ffffff;
+  background-color: transparent;
   color: black;
   text-align: center;
+  position:absolute;
+	bottom:0;
+	left:0;
 }
 
 #footer a {

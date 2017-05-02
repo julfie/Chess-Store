@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  layout 'dash'
   # authorize_resource
 
   def dashboard

@@ -1,20 +1,14 @@
-<div class="row">
+<div>
+    <% if can? :admin_dash, @user %>
+      <%= render :partial => 'admin_dash' %>
 
-  <% if can? :admin_dash, @user %>
-    <%= render :partial => 'admin_dash' %>
+    <% elsif can? :manager_dash, @user %>
+      <%= render :partial => 'manager_dash' %>
 
-  <% elsif can? :manager_dash, @user %>
-    <%= render :partial => 'manager_dash' %>
+    <% elsif can? :shipper_dash, @user %>
+      <%= render :partial => 'shipper_dash' %>
 
-  <% elsif can? :shipper_dash, @user %>
-    <%= render :partial => 'shipper_dash' %>
-
-  <% else %>
-    <%= render :partial => 'base_dash' %>
-  <% end %>
-
-  <div class="small-7 columns">
-  </div>
-  <div class="small-5 columns">
-  </div>
+    <% else %>
+      <%= render :partial => 'base_dash' %>
+    <% end %>
 </div>
