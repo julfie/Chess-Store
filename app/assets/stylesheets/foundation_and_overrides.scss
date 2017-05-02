@@ -60,12 +60,20 @@
   background: transparent !important;
 }
 
-.top-bar .login{
+.top-bar-section {
+  margin-top: 10px;
+}
+
+ul.dropdown.menu .login{
   color: #baca43;
   font-size: 1.2rem !important;
   line-height: 1rem !important;
   background-color: black;
-  padding: 1px;
+  padding: 4px;
+}
+
+.float-right {
+  margin-right: 1em;
 }
 
 .top-bar-right {
@@ -80,12 +88,6 @@
   font-size: 1.5rem !important;
   margin-top: auto;
   margin-bottom: auto;
-}
-
-ul.is-dropdown-submenu-item {
-  color: white;
-  font-size: .75rem !important;
-  line-height: 2.8125rem !important;
 }
 
 #base-dash {
@@ -103,6 +105,10 @@ ul.is-dropdown-submenu-item {
   background-size: cover;
 }
 
+#responsive-menu a{
+  color: white !important;
+}
+
 #main_content {
   margin-top: 3em;
 }
@@ -118,7 +124,7 @@ ul.is-dropdown-submenu-item {
   background-color: transparent;
   color: black;
   text-align: center;
-  position:absolute;
+  position: absolute;
 	bottom:0;
 	left:0;
 }
@@ -138,7 +144,7 @@ ul.is-dropdown-submenu-item {
 }
 
 table {
-  border-collapse:collapse;
+  border-collapse: collapse;
 }
 
 table th.centered, table td.centered {
