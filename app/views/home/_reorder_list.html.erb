@@ -1,5 +1,5 @@
 <% if can? :see_reorders, @user %>
-  <h5>Reorder List</h5>
+  <h3>Needs Reorder</h3>
 
   <% unless @items_to_reorder.nil? || @items_to_reorder.empty? %>
     <table class="table table-striped">

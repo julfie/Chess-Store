@@ -94,6 +94,35 @@ a.login {
   line-height: 2rem;
 }
 
+.accordion a, 
+.accordion-content {
+  border: 0px;
+  padding: 0rem;
+
+  h4 {
+    color: black;
+    font-size: 1rem;
+  }
+}
+
+.accordion-content {
+  padding-left: 1rem;
+}
+
+.accordion-title h3 {
+  color: #835424;
+  font-size: 1.5rem;
+}
+
+.accordion-title a :hover,
+.accordion-title a :active {
+    background-color: transparent;
+  }
+
+.accordion a :active {
+  background-color: #f0d9c3;
+}
+
 .float-right {
   margin-right: 1em;
 }
