@@ -9,7 +9,7 @@
       <th>Role</th>
       <th>Email</th>
       <th>Phone</th>
-      <th colspan="5"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -18,9 +18,8 @@
       <tr>
         <td><%= link_to user.proper_name, user %></td>
         <td><%= user.role %></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= mail_to user.email %></td>
+        <td><a href="tel:<%= user.phone %>"></a><i class="fa fa-phone fa-2x" aria-hidden="true"></i></td>
       </tr>
     <% end %>
   </tbody>

@@ -16,7 +16,7 @@
               <%= render :partial => 'partials/nav/admin_nav' %>
             <% elsif can? :manager_nav, @user %>
               <%= render :partial => 'partials/nav/manager_nav' %>
-              <% elsif can? :shipper_nav, @user %>
+            <% elsif can? :shipper_nav, @user %>
               <%= render :partial => 'partials/nav/shipper_nav' %>
             <% else %>
               <%= render :partial => 'partials/nav/base_nav' %>
