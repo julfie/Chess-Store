@@ -23,4 +23,22 @@
       <%= @item.description %>
     </p>
   </div>
+
+  <div class="small-1 columns">
+    <div class="form-actions">
+      <%= link_to(eval("edit_item_path(@item)")) do %>
+          &nbsp;<i class="fa fa-pencil fa-2x" aria-hidden="true"></i>
+      <% end %>
+      &nbsp;&nbsp;
+      
+      <%= link_to(eval("item_path(@item)"), method: 'delete', data: {confirm: "Are you sure you want to permanently delete #{@item.name}"}) do %>
+          &nbsp;<i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+      <% end %>
+      &nbsp;&nbsp;
+      
+      <%= link_to(eval("items_path"), class: 'button radius') do %>
+        &nbsp;All Items
+      <% end %>
+    </div>
+  </div>
 </div>
