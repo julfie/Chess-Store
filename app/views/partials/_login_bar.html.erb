@@ -3,9 +3,13 @@
   <section class="top-bar-section">
     <div class="float-right"> 
 
+      <%= render :partial => "partials/login_form" %>
+
       <!-- link to login -->
       <% if !logged_in? %>
-          <%= link_to "Login", login_path, class: 'login' %> 
+          <%= link_to(login_path, class: 'login', remote: true) do %> 
+            <a data-open="login_box"><h4 class="login">LOGIN</h4></a>
+          <% end %>
       <% end %>
 
       <!-- options for logged in user -->
