@@ -20,6 +20,18 @@ class DashboardController < ApplicationController
   end
 
   def ship
+    if !@order_item.shipped?
+      @order_item.ship
+    else
+      set_shipped_on_date_nil
+    end
+  end
+
+  private
+
+  def set_shipped_on_date_nil
+    @order_item.shipped_on = nil
+    @order_item.save!
   end
 
 end

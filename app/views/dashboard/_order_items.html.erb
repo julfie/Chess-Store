@@ -12,9 +12,13 @@
     </td>
     <td width="200">
         <% unless OrderItem.shipped.include? oi %>
-            <button onclick=oi.shipped type="button" class="button success"> <i class="fa fa-truck"  aria-hidden="true"></i> &nbsp;SHIP </button>
+            <%= link_to(@ship, remote: true) do %>
+                <button type="button" class="button bship success"> <i class="fa fa-truck"  aria-hidden="true"></i> &nbsp;SHIP </button>
+            <% end %>
         <% else %>
-            <button type="button" class="button alert"> UNDO </button>
+            <%= link_to(@ship, remote: true) do %>
+                <button type="button" class="button bship alert"> UNDO </button>
+            <% end %>
         <% end %>
     </td>
 </tr>

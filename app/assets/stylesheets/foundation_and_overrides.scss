@@ -273,6 +273,34 @@ table th.centered, table td.centered {
     text-align: center;
 }
 
+.centered{
+  background-color: white;
+}
+
+tbody tr:nth-child(even){
+    background-color: white;
+}
+
+td {
+  font-family: 'Lato-Light';  
+}
+
+thead {
+  border-top: 3px solid #f0d9c3;
+  border-bottom: 3px solid #f0d9c3;
+}
+
+.ship-address {
+  font-family: 'Lato-Light';
+  font-size: rem-calc(20);
+  line-height: 2rem;
+  text-align: center;
+}
+
+.bship{
+  margin: 0rem;
+}
+
 .note {
   font-style: italic;
   font-size: 80%;
