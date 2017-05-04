@@ -1,0 +1,14 @@
+<div class="prime">
+    <p>
+        <h2><%= @user.proper_name %></h2>
+        <% if can? :manage, Item, @user %>
+            <b id="user-role">
+                <%= @user.role %>
+            </b>
+        <% end %>
+    </p>
+    <p>
+        <h5 class='user-det'><%= @user.email.nil? ? 'N/A' : @user.email %> </h5>
+        <h5 class='user-det'><%= @user.phone.nil? ? 'N/A' : @user.phone %> </h5>
+    </p>
+</div>

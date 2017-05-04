@@ -1,15 +1,21 @@
 
 <!-- item ordering -->
 
-<h3>ORDER BY</h3>
-    <div class="sub-menu">
-        <h4>Name</h4>
-        <h4>Price</h4>
-        <h4>Inventory</h4>
-        <h4>Popularity</h4>
-    </div>
-<h3>View</h3>
-    <div class="sub-menu">
-        <h4>Active</h4>
-        <h4>Inactive</h4>
-    </div>
+<ul class="accordion" data-accordion data-multi-expand="true">
+    <li class="is-active" data-accordion-item>
+        <a href="#" class="accordion-title"><h3>ORDER BY</h3></a>
+        <div class="accordion-content" data-tab-content>
+            <a><h4>Name</h4></a>
+            <a><h4>Price</h4></a>
+            <a><h4>Inventory</h4></a>
+            <a><h4>Popularity</h4></a>
+        </div>
+    </li>
+    <li class="is-active" data-accordion-item>
+        <a href="#" class="accordion-title"><h3>View</h3></a>
+        <div class="accordion-content" data-tab-content>
+            <a><h4>Active</h4></a>
+            <a><h4>Inactive</h4></a>
+        </div>
+    </li>
+</ul>

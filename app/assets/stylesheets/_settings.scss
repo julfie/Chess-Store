@@ -196,16 +196,16 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $white;
-$accordion-plusminus: true;
-$accordion-title-font-size: rem-calc(12);
-$accordion-item-color: $primary-color;
+$accordion-background: transparent;
+$accordion-plusminus: false;
+$accordion-title-font-size: rem-calc(10);
+$accordion-item-color: black;
 $accordion-item-background-hover: transparent;
-$accordion-item-padding: 1.25rem 0.5rem;
-$accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: $body-font-color;
-$accordion-content-padding: 1rem;
+$accordion-item-padding: 0.15rem 0.5rem;
+$accordion-content-background: transparent;
+$accordion-content-border: 0px solid $light-gray;
+$accordion-content-color: black;
+$accordion-content-padding: 0rem;
 
 // 8. Accordion Menu
 // -----------------
@@ -499,10 +499,10 @@ $responsive-embed-ratios: (
 // ----------
 
 $reveal-background: $white;
-$reveal-width: 600px;
+$reveal-width: 650px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
-$reveal-border: 1px solid $medium-gray;
+$reveal-border: 1px solid #baca43;
 $reveal-radius: $global-radius;
 $reveal-zindex: 1005;
 $reveal-overlay-background: rgba($black, 0.45);
@@ -540,9 +540,9 @@ $switch-paddle-transition: all 0.25s ease-out;
 // 32. Table
 // ---------
 
-$table-background: $white;
+$table-background: #faf3ec;
 $table-color-scale: 5%;
-$table-border: 1px solid smart-scale($table-background, $table-color-scale);
+$table-border: 0px;
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
@@ -550,7 +550,7 @@ $table-row-stripe-hover: darken($table-background, $table-color-scale + $table-h
 $table-is-striped: true;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
-$table-head-background: smart-scale($table-background, $table-color-scale / 2);
+$table-head-background: $white;
 $table-head-row-hover: darken($table-head-background, $table-hover-scale);
 $table-foot-background: smart-scale($table-background, $table-color-scale);
 $table-foot-row-hover: darken($table-foot-background, $table-hover-scale);
@@ -615,6 +615,6 @@ $tooltip-radius: $global-radius;
 $topbar-padding: 0rem;
 $topbar-background: $light-gray;
 $topbar-submenu-background: $topbar-background;
-$topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
+$topbar-title-spacing: 0rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
