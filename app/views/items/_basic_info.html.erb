@@ -1,0 +1,11 @@
+<h2 id="item_name"><%= @item.name %></h2>
+    <% if can? :manage, Item, @user %>
+    <p>
+        <%= @item.active ? 'Active' : 'Inactive' %>
+    </p>
+    <% end %>
+<p>
+    <b class='price'><%= @item.current_price.nil? ? 'N/A' : number_to_currency(@item.current_price) %> </b>
+    <b class='color'><%= @item.color.nil? ? 'N/A' : @item.color %> </b>
+</p>
+<%= render :partial => "purchase_form" %>

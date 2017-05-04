@@ -1,0 +1,5 @@
+<% if @item.photo_url.nil? %>
+    <%= image_tag 'img_not_available.png', class: 'item_show_img' %>
+<% else %>
+    <%= image_tag @item.photo_url, class: 'item_show_img' %>
+<% end %>

@@ -1,24 +1,10 @@
 <div class="row align-center">
   <div class="small-3 columns">
-    <% if @item.photo_url.nil? %>
-      <%= image_tag 'img_not_available.png', class: 'item_show_img' %>
-    <% else %>
-      <%= image_tag @item.photo_url, class: 'item_show_img' %>
-    <% end %>
+    <%= render :partial => "photo" %>
   </div>
   
   <div class="small-7 columns">
-    <h2 id="item_name"><%= @item.name %></h2>
-      <% if can? :manage, Item, @user %>
-        <p>
-          <%= @item.active ? 'Active' : 'Inactive' %>
-        </p>
-      <% end %>
-    <%= render :partial => "purchase_form" %>
-    <p>
-      <b class='price'><%= @item.current_price.nil? ? 'N/A' : number_to_currency(@item.current_price) %> </b>
-      <b class='color'><%= @item.color.nil? ? 'N/A' : @item.color %> </b>
-    </p>
+    <%= render :partial => "basic_info" %>
     <p id='desc'>
       <%= @item.description %>
     </p>
