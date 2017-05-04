@@ -143,8 +143,35 @@ a.login {
   height: 150px;
 }
 
+.accordion {
+  padding-bottom: 0rem;
+  border-bottom: 2px solid #f0d9c3;
+}
+
 .accordion a :active {
   background-color: #f0d9c3;
+}
+
+.accordion-content {
+  padding-left: 1.5rem;
+}
+
+.accordion-content h4 {
+  font-size: 1rem;  
+}
+
+.accordion-title h3 :active{
+  color: #835424 !important;
+  background-color: transparent;
+}
+
+.button.radius.new {
+  background-color: #baca43;
+}
+
+#slider-out {
+  width: 50px;
+  display: inline-block;
 }
 
 .float-right {

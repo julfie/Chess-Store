@@ -1,5 +1,12 @@
-<div class="row">
-  <div class="small-8 columns">
+<div class="row align-center">
+  <% unless sidebar1.blank? %>
+    <div class="small-2 columns">
+      <!-- render the sidebar, if it exists -->
+      <%= render partial: "#{sidebar1}" %>
+    </div>
+  <% end %>
+
+  <div class="columns">
     <!-- primary partial gets displayed here in main div -->
     <%= render partial: "#{primary}" %>
     <!-- sometimes we want another partial below -->
@@ -9,10 +16,12 @@
     <% end %>
     
   </div>
-  <div class="small-4 columns">
-    <!-- render the sidebar, if it exists -->
-    <%= render partial: "#{sidebar}" unless sidebar.blank? %>
-  </div>
+  <% unless sidebar.blank? %>
+    <div class="small-2 columns">
+      <!-- render the sidebar, if it exists -->
+      <%= render partial: "#{sidebar}" %>
+    </div>
+  <% end %>
 </div>
 
 <% if can? :create, Item, @user %>
