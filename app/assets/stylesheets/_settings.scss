@@ -201,7 +201,7 @@ $accordion-plusminus: true;
 $accordion-title-font-size: rem-calc(12);
 $accordion-item-color: $primary-color;
 $accordion-item-background-hover: transparent;
-$accordion-item-padding: 1.25rem 1rem;
+$accordion-item-padding: 1.25rem 0.5rem;
 $accordion-content-background: $white;
 $accordion-content-border: 1px solid $light-gray;
 $accordion-content-color: $body-font-color;
@@ -562,16 +562,16 @@ $show-header-for-stacked: false;
 // --------
 
 $tab-margin: 0;
-$tab-background: $white;
-$tab-color: $primary-color;
-$tab-background-active: $light-gray;
-$tab-active-color: $primary-color;
+$tab-background: transparent;
+$tab-color: black;
+$tab-background-active: transparent;
+$tab-active-color: #835424;
 $tab-item-font-size: rem-calc(12);
-$tab-item-background-hover: $white;
-$tab-item-padding: 1.25rem 1.5rem;
+$tab-item-background-hover: transparent;
+$tab-item-padding: 0.5rem 1.5rem;
 $tab-expand-max: 6;
-$tab-content-background: $white;
-$tab-content-border: $light-gray;
+$tab-content-background: #faf3ec;
+$tab-content-border: transparent;
 $tab-content-color: $body-font-color;
 $tab-content-padding: 1rem;
 
@@ -590,10 +590,10 @@ $thumbnail-radius: $global-radius;
 
 $titlebar-background: $black;
 $titlebar-color: $white;
-$titlebar-padding: 0.5rem;
+$titlebar-padding: 0rem;
 $titlebar-text-font-weight: bold;
 $titlebar-icon-color: $white;
-$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-color-hover: #baca43;
 $titlebar-icon-spacing: 0.25rem;
 
 // 36. Tooltip
@@ -612,7 +612,7 @@ $tooltip-radius: $global-radius;
 // 37. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
+$topbar-padding: 0rem;
 $topbar-background: $light-gray;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
