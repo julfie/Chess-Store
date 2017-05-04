@@ -1,5 +1,6 @@
+<div id="unshipped"> 
   <h3>Unshipped Orders</h3>
-  
+
     <table class="table">
       <thead>
         <tr>
@@ -22,10 +23,11 @@
         </td>
       </tr>
       <tr>      
-        <% if order.id == @unshipped_orders.first.id %>
-          <%= render :partial =>  "order_items" %>
+        <% if order == @unshipped_orders.first %>
+            <%= render :partial =>  "order_items" %>
         <% end %>
       </tr>
     <% end %>
     </tbody>
   </table>
+</div>

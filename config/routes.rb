@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'howto' => 'home#howto', as: :howto
 
   get 'dashboard' => 'dashboard#dashboard', as: :dashboard
+  patch 'ship/:id' => 'dashboard#ship', as: :ship
   
   # Set the root url
   root :to => 'dashboard#dashboard'  
