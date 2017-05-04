@@ -36,6 +36,7 @@ gem 'foundation-rails', '~> 6.3', '>= 6.3.1.0'
 gem "autoprefixer-rails"
 gem 'font-awesome-sass'
 gem 'carrierwave', '1.0.0'
+gem 'bourbon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
