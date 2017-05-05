@@ -324,12 +324,8 @@ table th.centered, table td.centered {
     text-align: center;
 }
 
-.centered{
-  background-color: white;
-}
-
-.centered tr:nth-child(even){
-    background-color: white;
+tr.centered{
+  background-color: white !important;
 }
 
 td {

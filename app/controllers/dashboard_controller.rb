@@ -23,7 +23,9 @@ class DashboardController < ApplicationController
     @order_item = OrderItem.where( id: params[:id] )[0]
     @order_item.ship_item
     @unshipped_orders = Order.not_shipped.chronological
-    @order_items = Order.not_shipped.chronological.first.order_items.unshipped
+    unless @unshipped_orders.empty? || @unshipped_orders.nil?
+      @order_items = Order.not_shipped.chronological.first.order_items.unshipped
+    end
   end
 
 end
