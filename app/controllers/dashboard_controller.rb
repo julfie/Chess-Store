@@ -20,8 +20,8 @@ class DashboardController < ApplicationController
   end
 
   def ship
-    @order_item = OrderItem.where( id: params[:id] )
-    @order_item.shipped
+    @order_item = OrderItem.where( id: params[:id] )[0]
+    @order_item.ship_item
     @unshipped_orders = Order.not_shipped.chronological
     @order_items = Order.not_shipped.chronological.first.order_items.unshipped
   end

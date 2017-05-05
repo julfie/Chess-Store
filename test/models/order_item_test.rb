@@ -54,17 +54,17 @@ class OrderItemTest < ActiveSupport::TestCase
     
     should "have shipped method set the shipped_on date" do
       assert_nil @markv_o2_1.shipped_on          # confirm not yet shipped
-      @markv_o2_1.shipped                        # ship the item
+      @markv_o2_1.ship_item                        # ship the item
       @markv_o2_1.reload                         # reload item data from database
       assert_not_nil @markv_o2_1.shipped_on      # confirm shipped_on date set
       assert_equal Date.current, @markv_o2_1.shipped_on
     end
     
-    should "have shipped method reduces inventory level by correct amount" do
+    should "have ship method reduces inventory level by correct amount" do
       assert_nil @markv_o2_1.shipped_on       # confirm not yet shipped
       current_item = @markv_o2_1.item
       current_inventory = current_item.inventory_level
-      @markv_o2_1.shipped                      # ship the item
+      @markv_o2_1.ship_item                      # ship the item
       current_item.reload
       assert_equal (current_inventory - 10), current_item.inventory_level
     end
