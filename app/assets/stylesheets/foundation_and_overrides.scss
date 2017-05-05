@@ -237,6 +237,14 @@ div#responsive-menu {
   background-size: cover;
 }
 
+thead tr {
+  border-top: 2px;
+  border-bottom: 2px;
+  border-color: #f0d9c3;
+  font-size: 18pt;
+  color: #835424;
+}
+
 #responsive-menu a{
   color: white !important;
 }
@@ -283,6 +291,17 @@ div#responsive-menu {
   }
 }
 
+.user {
+  font-family: 'Neou-Bold';
+}
+
+.prime {
+  border-bottom: 2px solid #f0d9c3;
+  display: block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
 #footer a {
   color: #333333;
   text-decoration: none;
@@ -303,6 +322,30 @@ table {
 
 table th.centered, table td.centered {
     text-align: center;
+}
+
+tr.centered{
+  background-color: white !important;
+}
+
+td {
+  font-family: 'Lato-Light';  
+}
+
+thead {
+  border-top: 3px solid #f0d9c3;
+  border-bottom: 3px solid #f0d9c3;
+}
+
+.ship-address {
+  font-family: 'Lato-Light';
+  font-size: rem-calc(20);
+  line-height: 2rem;
+  text-align: center;
+}
+
+.bship{
+  margin: 0rem;
 }
 
 .note {

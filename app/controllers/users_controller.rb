@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @past_orders = @user.orders.paid.chronological.paginate(:page => params[:page]).per_page(7)
+    @current_orders = @user.orders.chronological.paginate(:page => params[:page]).per_page(5)
   end
 
   # GET /users/new

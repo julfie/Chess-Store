@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.proper_name, user %></td>
+        <td><%= user.role %></td>
+        <td><%= mail_to user.email %></td>
+        <td><a href="tel:<%= user.phone %>"></a><i class="fa fa-phone fa-2x" aria-hidden="true"></i></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
