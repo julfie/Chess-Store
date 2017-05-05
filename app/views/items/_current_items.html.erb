@@ -1,5 +1,20 @@
 <% unless items.nil? || items.empty? %>
   <h5><%= item_type.capitalize %></h5>
+
+  <% items.each do |item| %>
+    <div class="item-card">
+        <% if item.photo_url.nil? %>
+          <%= image_tag 'img_not_available.png', class: 'item_show_img' %>
+        <% else %>
+          <%= image_tag item.photo_url, class: 'item_show_img' %>
+        <% end %>
+      <div class="card-divider">
+        <h5>item.name</h5>
+        <p>item.price</p>
+      </div>
+    </div>
+  <% end %>
+
   <table class="table table-striped">
     <thead>
       <tr>
