@@ -141,7 +141,7 @@ h4.login{
 
 .tabs-title h4 {
   color: #835424;
-  font-size: 1.5rem;
+  font-size: rem-calc(16);
   margin: 0rem;
 }
 
@@ -289,6 +289,34 @@ thead tr {
       font-family: 'Neou-Bold';
     }
   }
+}
+
+#item-type {
+  font-family: 'Neou-Bold';
+}
+
+.card.item {
+  display: inline-block;
+  margin: 10px 9.8px !important;
+  width: 22%;
+  border: 0px;
+  background-color: transparent;
+  color: #835424;
+  text-align: center;
+}
+
+.card-divider {
+  padding: 0.5rem;
+}
+
+.item_show_img {
+  width: 100%;
+  height: auto;
+}
+
+#item-card-name {
+  font-family: 'Lato-Light';
+  font-size: rem-calc(15);
 }
 
 .user {
