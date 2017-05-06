@@ -1,5 +1,13 @@
-<div class="row">
-  <div class="small-12 columns" id="main_content">
-      ADMIN
-  </div>
+<div class="small-2 columns" style='padding-top: 3em;'>
+ <%= render :partial => "item_filters" %>  
+</div>
+
+<div class="small-8 columns" id="main_content">
+  <%= render :partial => 'profits' %>
+  <%= render :partial => 'reorder_list' %>
+  <%= render :partial => "items/active_items" %>
+</div>
+
+<div class="small-2 columns" style='padding-top: 3em;'>
+  <%= render :partial => "item_orderings" %>  
 </div>
