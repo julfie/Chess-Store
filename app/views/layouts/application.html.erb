@@ -14,6 +14,31 @@
     <%= csrf_meta_tags %>
   </head>
 
+  <main>
+    <div id="cd-shadow-layer"></div>
+ 
+    <div id="cd-cart">
+      <h2>Cart</h2>
+      <ul class="cd-cart-items">
+        <li>
+          <!-- ... -->
+        </li>
+    
+        <li>
+          <!-- ... -->
+        </li>
+      </ul> <!-- cd-cart-items -->
+    
+      <div class="cd-cart-total">
+        <p>Total <span>$39.96</span></p>
+      </div> <!-- cd-cart-total -->
+    
+      <a href="#0" class="checkout-btn">Checkout</a>
+      
+      <p class="cd-go-to-cart"><a href="#0">Go to cart page</a></p>
+    </div> <!-- cd-cart -->
+  </main>
+
   <body>
     <div id="title_area">
       <%= render :partial => "partials/nav" %>      
