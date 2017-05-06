@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
         unless @unshipped_orders.empty? || @unshipped_orders.nil?
           @order_items = Order.not_shipped.chronological.first.order_items.unshipped
         end
-      elsif (current_user.role? :manager)
+      elsif (current_user.role? :manager) || (current_user.role? :admin)
         @items_to_reorder = Item.need_reorder.alphabetical.to_a
         @boards = Item.active.for_category('boards').alphabetical.paginate(:page => params[:page]).per_page(10)
         @pieces = Item.active.for_category('pieces').alphabetical.paginate(:page => params[:page]).per_page(10)
