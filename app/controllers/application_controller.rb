@@ -25,18 +25,4 @@ class ApplicationController < ActionController::Base
     redirect_to login_url, alert: "You need to log in to view this page." if current_user.nil?
   end
 
-  def add_to_cart
-  end
-
-  def remove_from_cart
-    remove_item_from_cart(item_id)
-  end
-
-  def calculate_cart
-  end
-
-  def get_cart
-    cart.get_list_of_items_in_cart
-  end
-
 end
