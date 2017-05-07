@@ -1,11 +1,10 @@
 class CartController < ActionController::Base
-
-  def new
-    create_cart
-  end
+  include ChessStoreHelpers::Cart
 
   def add
+    @item = Item.find(params[:id])
     add_item_to_cart(params[:id])
+    redirect_to item_path(@item), notice: 'Item added to cart'
   end
 
   def remove
@@ -17,12 +16,7 @@ class CartController < ActionController::Base
   end
 
   def get
-    cart.get_list_of_items_in_cart
-  end
-
-  def destroy
-    clear_cart
-    destroy_cart
+    get_list_of_items_in_cart
   end
 
   def checkout
