@@ -11,7 +11,7 @@
           <li>
             <br>
             <%= link_to  oi.item.name, item_path(oi.item) %>
-            <%= oi.item.current_price %>
+            <%= number_to_currency(oi.item.current_price) %>
             <%= oi.quantity %>
             <%= link_to (image_tag "remove-item.svg"), remove_from_cart_path(oi.item.id), remote: true, method: 'patch' %>
           </li>
