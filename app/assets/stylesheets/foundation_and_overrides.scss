@@ -183,9 +183,15 @@ h4.login{
   margin-right: 1em;
 }
 
-.top-bar, .top-bar ul{
+.top-bar {
   color: white;
   background: black;
+  font-size: 1.5rem !important;
+}
+
+.top-bar ul{
+  color: white;
+  background: transparent;
   font-size: 1.5rem !important;
 }
 
@@ -361,6 +367,9 @@ thead {
   margin: 0rem;
 }
 
+/* -------------------------------- 
+        Item Index
+-------------------------------- */
 
 .card.item {
   display: inline-block;
@@ -380,11 +389,6 @@ thead {
     margin-bottom: 0rem;
 }
 
-#item_name {
-  font-family: 'Neou-Bold';
-  font-size: 2.5rem;
-}
-
 #item-card-name {
   font-family: 'Lato-Light';
   font-size: rem-calc(15);
@@ -393,6 +397,15 @@ thead {
 #slider-out {
   width: 50px;
   display: inline-block;
+}
+
+/* -------------------------------- 
+        Item Show
+-------------------------------- */
+
+#item_name {
+  font-family: 'Neou-Bold';
+  font-size: 2.5rem;
 }
 
 #item-type {
@@ -418,8 +431,14 @@ li.well {
 }
 
 .cart-slide, .cart-slide.vertical-menu{
+  font-family: 'lato, sans-serif';
   background-color: white !important;
   color: black;
+}
+
+.cart-close, .cart-checkout {
+  display: block;
+  background-color: #baca43;
 }
 
 /* -------------------------------- 
