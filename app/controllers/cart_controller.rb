@@ -1,17 +1,34 @@
 class CartController < ActionController::Base
 
-  def add_to_cart
+  def new
+    create_cart
   end
 
-  def remove_from_cart
-    remove_item_from_cart(item_id)
+  def add
+    add_item_to_cart(params[:id])
   end
 
-  def calculate_cart
+  def remove
+    remove_item_from_cart(params[:id])
   end
 
-  def get_cart
+  def calculate
+    calculate_cart_items_cost
+  end
+
+  def get
     cart.get_list_of_items_in_cart
+  end
+
+  def destroy
+    clear_cart
+    destroy_cart
+  end
+
+  def checkout
+    save_each_item_in_cart(params[:id])
+    clear_cart
+    destroy_cart
   end
 
 end
