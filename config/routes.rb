@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   patch 'ship/:id' => 'dashboard#ship', as: :ship
 
   #cart routes
-  get 'remove/:id' => 'cart#remove', as: :remove_from_cart
+  patch 'remove/:id' => 'cart#remove', as: :remove_from_cart
   get 'calculate' => 'cart#calculate', as: :calculate_cart
   get 'destroy' => 'cart#destroy', as: :destroy_cart
   get 'add/:id' => 'cart#add', as: :add_to_cart
