@@ -1,23 +1,11 @@
-<div id="cd-cart-trigger"><a class="cd-img-replace" href="#0">Cart</a></div>
+<div class="off-canvas position-right cart-slide" id="cart" data-off-canvas>
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
 
-<div id="cd-cart">
-    <h2>Cart</h2>
-    <ul class="cd-cart-items">
-        <% unless @get_cart.nil? %> 
-            <% @get_cart.each do |i| %>
-                <li>
-                    <span class="cd-qty">1x</span> i.name
-                    <div class="cd-price">i.price</div>
-                    <a href="#0" class="cd-item-remove cd-img-replace">Remove</a>
-                </li>
-            <% end %>
-        <% end %>
-    </ul> <!-- cd-cart-items -->
-
-    <div class="cd-cart-total">
-        <!--<p>Total <span><% @calculate_cart %></span></p>-->
-    </div> <!-- cd-cart-total -->
-
-    <a href="#0" >Checkout</a>
-    
-</div> <!-- cd-cart -->
+    <!-- Menu -->
+    <ul class="vertical menu c-items">
+      <% %>
+    </ul>
+</div>

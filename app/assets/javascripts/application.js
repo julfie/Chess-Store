@@ -16,13 +16,3 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
-function move_navigation( $navigation, $MQ) {
-	if ( $(window).width() >= $MQ ) {
-		$navigation.detach();
-		$navigation.appendTo('header');
-	} else {
-		$navigation.detach();
-		$navigation.insertAfter('header');
-	}
-}
