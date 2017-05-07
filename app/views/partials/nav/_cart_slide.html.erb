@@ -6,6 +6,13 @@
 
     <!-- Menu -->
     <ul class="vertical menu c-items">
-      <% %>
+      <% @cart.each do |oi| %>
+        <li>
+          <br>
+          <%= link_to  oi.item.name, item_path(oi.item) %>
+          <%= oi.item.current_price %>
+          <%= link_to (image_tag "remove-item.svg"), remove_from_cart_path(oi.item.id), remote: true, method: 'get' %>
+        </li>
+      <% end %>
     </ul>
 </div>

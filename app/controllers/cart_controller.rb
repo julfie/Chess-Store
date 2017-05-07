@@ -4,19 +4,18 @@ class CartController < ActionController::Base
   def add
     @item = Item.find(params[:id])
     add_item_to_cart(params[:id])
-    redirect_to item_path(@item), notice: 'Item added to cart'
+    flash[:notice] = "Item added to cart"
+    redirect_to item_path(@item)
   end
 
   def remove
     remove_item_from_cart(params[:id])
+    flash[:notice] = "Item removed from cart"
+    redirect_to :back
   end
 
   def calculate
     calculate_cart_items_cost
-  end
-
-  def get
-    get_list_of_items_in_cart
   end
 
   def checkout
