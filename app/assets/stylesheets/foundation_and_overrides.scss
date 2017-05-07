@@ -242,6 +242,21 @@ thead tr {
   color: white !important;
 }
 
+/* -------------------------------- 
+        ITEM PURCHASING
+-------------------------------- */
+
+#qty_input {
+  width: 100px;
+  display: inline-block
+}
+
+#qty {
+  font-family: 'Lato Light';
+  font-size: rem-calc(13);
+  display: inline-block
+}
+
 #main_content {
   margin-top: 3em;
 }
@@ -393,6 +408,10 @@ li.well {
   margin-left: -10px;
 }
 
+/* -------------------------------- 
+        CART
+-------------------------------- */
+
 .cart {
   display: inline;
   float: right;
@@ -402,6 +421,10 @@ li.well {
   background-color: white !important;
   color: black;
 }
+
+/* -------------------------------- 
+        FORM
+-------------------------------- */
 
 /* Cutting back the spacing on simple_form... */
 .form-horizontal .control-label {
