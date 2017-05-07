@@ -1,21 +1,12 @@
 <div class="off-canvas position-right cart-slide" id="cart" data-off-canvas>
+    
     <!-- Close button -->
-    <button class="close-button" aria-label="Close menu" type="button" data-close>
-      <span aria-hidden="true">&times;</span>
-    </button>
+    <div class="cart-close">
+      <button class="close-button" aria-label="Close menu" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
 
     <!-- Menu -->
-    <ul class="vertical menu c-items">
-      <% unless @cart.nil? || @cart.empty? %>
-        <% @cart.each do |oi| %>
-          <li>
-            <br>
-            <%= link_to  oi.item.name, item_path(oi.item) %>
-            <%= number_to_currency(oi.item.current_price) %>
-            <%= oi.quantity %>
-            <%= link_to (image_tag "remove-item.svg"), remove_from_cart_path(oi.item.id), remote: true, method: 'patch' %>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
+    <%= render :partial => "cart/menu_items" %>
 </div>
