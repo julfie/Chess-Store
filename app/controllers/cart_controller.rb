@@ -10,8 +10,6 @@ class CartController < ActionController::Base
 
   def remove
     remove_item_from_cart(params[:id])
-    flash[:notice] = "Item removed from cart"
-    redirect_to :back
   end
 
   def calculate
