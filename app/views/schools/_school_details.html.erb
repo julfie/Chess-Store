@@ -1,0 +1,17 @@
+<div class="prime">
+    <p>
+        <h2><strong><%= @school.name %></strong></h2>
+        <b id="user-role">
+            Grades <%= @school.min_grade %> - <%= @school.max_grade %>
+        </b>
+    </p>
+    <p>
+        <h5 class='user-det'><%= @school.street_1 unless @school.street_1.nil? %> </h5>
+        <h5 class='user-det'><%= @school.street_2 unless @school.street_2.nil? %> </h5>
+        <h5 class='user-det'>
+            <%= @school.city %> 
+            <%= @school.state %>, 
+            <%= @school.zip %>
+        </h5>
+    </p>
+</div>

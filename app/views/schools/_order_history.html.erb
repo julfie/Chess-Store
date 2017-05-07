@@ -1,0 +1,22 @@
+<% unless @past_orders.empty? %>
+    
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Past Orders</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @past_orders.each do |order| %>
+            <tr>
+                <td><%= link_to 'view', order %></td>
+                <td><%= order.date %></td>
+                <td><%= order.grand_total.round(2) %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>
+
+<br>
