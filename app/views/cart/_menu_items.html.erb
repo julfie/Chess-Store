@@ -1,7 +1,11 @@
 <div class="checkout-summary" id='cart-menu'>
   <div class="checkout-summary-title">
     <h5>Your Cart</h5>
-    <h5><%= @cart.length %> Items</h5>
+    <% unless @cart.nil? %>
+      <h5><%= @cart.length %> Items</h5>
+    <% else %>
+      <h5>0 Items</h5>
+    <% end %>
   </div>
 
   <% unless @cart.nil? || @cart.empty? %>
