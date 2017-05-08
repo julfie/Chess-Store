@@ -1,5 +1,5 @@
-<form>
+<form action="<%= add_to_cart_path(@item.id) %>">
     <b id="qty">Qty</b>
     <input type="number" name="quantity" value="1" id="qty_input">
-    <%= link_to (image_tag "add_to_cart.png"), add_to_cart_path(@item.id), method: 'get' %>
+    <input type="submit" class="button success" value=" + Add to Cart">
 </form>

@@ -3,7 +3,10 @@ class CartController < ActionController::Base
 
   def add
     @item = Item.find(params[:id])
-    add_item_to_cart(params[:id])
+    quantity = params[:quantity].to_i
+    for i in 1..quantity do
+      add_item_to_cart(params[:id])
+    end
     flash[:notice] = "Item added to cart"
     redirect_to item_path(@item)
   end
