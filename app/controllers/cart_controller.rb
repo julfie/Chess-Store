@@ -10,6 +10,7 @@ class CartController < ActionController::Base
 
   def remove
     remove_item_from_cart(params[:id])
+    @cart = get_list_of_items_in_cart
   end
 
   def calculate
