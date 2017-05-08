@@ -2,9 +2,8 @@
 
     <%= form_tag sessions_path do %>
       <div class="control-group">
-        <%= label_tag :email %>
         <div class="controls">
-          <%= text_field_tag :username, params[:username] %>
+          <%= text_field_tag :username, params[:username], input_html: { placeholder:"Username" } %>
         </div>
       </div>
 

@@ -13,12 +13,11 @@
                   <%= f.input :street_1, input_html: { placeholder:"Street 1" }, label: false %>
                   <%= f.input :street_2, input_html: { placeholder:"Street 2" }, label: false %>
                   <%= f.input :city, input_html: { placeholder:"City" }, label: false %>
-                  <%= f.input :state, collection: School::STATES_LIST, include_blank: true, input_html: { placeholder:"State" }, label: false %>
+                  <%= f.input :state, collection: School::STATES_LIST, include_blank: true, input_html: { class:"sch_state_form" } %>
                   <%= f.input :zip, input_html: { placeholder:"Zip" }, label: false %>
                   <%= f.input :min_grade, input_html: { placeholder:"Minimum Grade" }, label: false %>
                   <%= f.input :max_grade, input_html: { placeholder:"Maximum Grade" }, label: false %>
-                  <%= f.input :active, input_html: { placeholder:"" }, label: false %>
-                  <%= submit_tag "Submit and Continue", class: 'primary button expanded', label: false %>
+                  <%= submit_tag "Submit and Continue", class: 'secondary button expanded' %>
                 <% end %>
 
               </div>
@@ -32,16 +31,16 @@
         <div class="accordion-content" data-tab-content>
           <form class="multi-step-form">
             <div class="row">
-              <div class="small-12 medium-9 column">
+              <div class="small-11 column">
 
                 <%= simple_form_for new_user_path do |f| %>
-                  <%= f.input :first_name, input_html: {class: "avg"} %>
-                  <%= f.input :last_name, input_html: {class: "avg"} %>
-                  <%= f.input :email, input_html: {class: "avg"} %>
-                  <%= f.input :phone, input_html: {class: "avg"} %>
-                  <%= f.input :username, input_html: {class: "avg"} %>
-                  <%= f.input :password, input_html: {class: "avg"} %>
-                  <%= submit_tag "Create Account", class: 'primary button expanded' %>
+                  <%= f.input :first_name, input_html: {placeholder:"First Name"}, label: false %>
+                  <%= f.input :last_name, input_html: {placeholder:"Last Name"}, label: false %>
+                  <%= f.input :email, input_html: {placeholder:"Email"}, label: false %>
+                  <%= f.input :phone, input_html: {placeholder:"Phone Number"}, label: false %>
+                  <%= f.input :username, input_html: {placeholder:"Username"}, label: false %>
+                  <%= f.input :password, input_html: {placeholder:"Password"}, label: false %>
+                  <%= submit_tag "Create Account", class: 'secondary button expanded' %>
                 <% end %>
 
               </div>
