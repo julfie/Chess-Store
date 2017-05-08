@@ -2,7 +2,7 @@
 <!-- Add buttons to list all, edit project or destroy object -->
 
 <div class="form-actions">
-    <%= link_to(eval("item_path(@item)"), remote: true) do %>
+    <%= link_to(edit_item_path(item_id: @item), id: "edit_item") do %>
         &nbsp;<i class="fa fa-pencil fa-2x" aria-hidden="true" ></i>
     <% end %>
     &nbsp;&nbsp;

@@ -1,0 +1,5 @@
+<%= simple_form_for @purchase, html: {id: 'new_purchase_form', class: 'form-horizontal', multipart: true } do |f| %>
+    <%= f.input :quantity, input_html: {class: "avg"} %>
+    <%= f.submit nil, :class => 'button secondary radius' %>
+    <%= link_to 'Cancel', purchases_path, :class => 'button alert radius' %>
+<% end %>

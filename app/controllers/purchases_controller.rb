@@ -8,6 +8,7 @@ class PurchasesController < ApplicationController
 
   def new
     @purchase = Purchase.new
+    @purchase.item_id = params[:item_id] unless params[:item_id].nil?
   end
 
   def create
@@ -15,7 +16,10 @@ class PurchasesController < ApplicationController
     @purchase.date = Date.current
     
     if @purchase.save
-      redirect_to purchases_path, notice: "Successfully added a purchase for #{@purchase.quantity} #{@purchase.item.name}."
+      respond_to do |format|
+        format.html { redirect_to purchases_path, notice: "Successfully added a purchase for #{@purchase.quantity} #{@purchase.item.name}." }
+        format.js
+      end
     else
       render action: 'new'
     end

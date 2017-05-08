@@ -1,4 +1,13 @@
-<p><b>Inventory Level</b>: <%= @item.inventory_level.nil? ? 'N/A' : @item.inventory_level %></p>
-<p><b>Reorder Level</b>: <%= @item.reorder_level.nil? ? 'N/A' : @item.reorder_level %></p>
-<p><b>Total weight</b>: <%= @item.weight.nil? ? 'N/A' : @item.weight %> lbs.</p>
-<p><b>Category</b>: <%= @item.category.capitalize %></p>
+<div class="row">
+    <div class="small-6 columns">
+        <p><b>Inventory Level</b>: <%= @item.inventory_level.nil? ? 'N/A' : @item.inventory_level %></p>
+        <p><b>Reorder Level</b>: <%= @item.reorder_level.nil? ? 'N/A' : @item.reorder_level %></p>
+        <p><b>Total weight</b>: <%= @item.weight.nil? ? 'N/A' : @item.weight %> lbs.</p>
+        <p><b>Category</b>: <%= @item.category.capitalize %></p>
+    </div>
+    <div class="small-6 columns">
+        <%= link_to( new_purchase_path(item_id: @item.id), id: 'purchase_link', class: 'secondary button tiny radius', remote: true) do %>
+            &nbsp;Update Inventory
+        <% end %>
+    </div>
+</div>
