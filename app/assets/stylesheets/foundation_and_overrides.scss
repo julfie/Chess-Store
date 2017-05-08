@@ -86,7 +86,6 @@
 }
 
 .top-bar {
-  background-color: black;
   width: 90%;
   margin: auto;
 }
@@ -108,13 +107,17 @@
   background-color: black;
 }
 
-ul.dropdown.menu .login{
+.dropdown.menu .login{
   color: #baca43;
   font-size: 1rem !important;
   line-height: 1rem !important;
-  background-color: black;
   padding: 4px;
   border: 0px;
+}
+
+.dropdown.menu {
+  display: inline;
+  margin: 0.5em 1em;
 }
 
 h4.login{
@@ -180,9 +183,15 @@ h4.login{
   margin-right: 1em;
 }
 
-.top-bar, .top-bar ul{
+.top-bar {
   color: white;
   background: black;
+  font-size: 1.5rem !important;
+}
+
+.top-bar ul{
+  color: white;
+  background: transparent;
   font-size: 1.5rem !important;
 }
 
@@ -239,6 +248,21 @@ thead tr {
   color: white !important;
 }
 
+/* -------------------------------- 
+        ITEM PURCHASING
+-------------------------------- */
+
+#qty_input {
+  width: 100px;
+  display: inline-block
+}
+
+#qty {
+  font-family: 'Lato Light';
+  font-size: rem-calc(13);
+  display: inline-block
+}
+
 #main_content {
   margin-top: 3em;
 }
@@ -284,6 +308,7 @@ thead tr {
 .item_show_img {
   width: 100%;
   height: auto;
+  border: 0px;
 }
 
 .user {
@@ -343,6 +368,9 @@ thead {
   margin: 0rem;
 }
 
+/* -------------------------------- 
+        Item Index
+-------------------------------- */
 
 .card.item {
   display: inline-block;
@@ -352,6 +380,7 @@ thead {
   background-color: transparent;
   color: #835424;
   text-align: center;
+  border: 0px;
 }
 
 .card-divider {
@@ -362,11 +391,6 @@ thead {
     margin-bottom: 0rem;
 }
 
-#item_name {
-  font-family: 'Neou-Bold';
-  font-size: 2.5rem;
-}
-
 #item-card-name {
   font-family: 'Lato-Light';
   font-size: rem-calc(15);
@@ -375,6 +399,15 @@ thead {
 #slider-out {
   width: 50px;
   display: inline-block;
+}
+
+/* -------------------------------- 
+        Item Show
+-------------------------------- */
+
+#item_name {
+  font-family: 'Neou-Bold';
+  font-size: 2.5rem;
 }
 
 #item-type {
@@ -390,6 +423,79 @@ li.well {
   margin-left: -10px;
 }
 
+/* -------------------------------- 
+        CART
+-------------------------------- */
+
+.cart {
+  display: inline;
+  float: right;
+}
+
+.cart-slide, .cart-slide.vertical-menu{
+  font-family: 'lato, sans-serif';
+  background-color: white !important;
+  color: black;
+}
+
+.cart-close, .cart-checkout {
+  display: block;
+  background-color: #baca43;
+}
+
+.checkout-summary {
+  padding-top: 3em;
+  max-width: 500px;
+  background-color: $white;
+}
+
+.checkout-summary-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid $light-gray;
+}
+
+.checkout-summary-item {
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid $light-gray;
+  .item-name,
+  .item-price {
+    padding: 0 1rem;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .title {
+    font-weight: bold;
+  }
+}
+
+.checkout-summary-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid $light-gray;
+  border-top: none;
+}
+
+.cart_img {
+  width: 60px;
+  height: 60px;
+}
+
+#checkout-b {
+  background-color: #baca43;
+}
+
+/* -------------------------------- 
+        FORM
+-------------------------------- */
 
 /* Cutting back the spacing on simple_form... */
 .form-horizontal .control-label {
