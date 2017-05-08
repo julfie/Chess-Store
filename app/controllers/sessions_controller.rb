@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  include ChessStoreHelpers::Cart
+
   def new
   end
   
@@ -7,6 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to root_url, notice: "Logged in!"
+      create_cart
     else
       flash.now.alert = "Username or password is invalid"
       render "new"
@@ -16,5 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to root_url, notice: "Logged out!"
+    clear_cart
+    destroy_cart
   end
 end

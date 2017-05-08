@@ -1,5 +1,7 @@
-<form>
+<form action="<%= add_to_cart_path(@item.id) %>">
     <b id="qty">Qty</b>
     <input type="number" name="quantity" value="1" id="qty_input">
-
+    <button type="submit">
+        <%= image_tag  "add_to_cart" %>
+    </button>
 </form>
