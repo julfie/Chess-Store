@@ -5,21 +5,30 @@
     <%= f.input :name, input_html: {class: "avg"} %>
     <div class="field">
       <%= f.label :photo %><br />
+      <i class="fa fa-file-image-o fa-4x" aria-hidden="true"></i>
       <%= f.file_field :photo %>
     </div>
     <%= f.input :description, input_html: { :rows => 4, class: "avg" } %>
     <%= f.input :category, collection: Item::CATEGORIES, include_blank: true, input_html: {class: "avg"} %>
     <%= f.input :color, input_html: {class: "avg"} %>
-    <%= f.input :weight, input_html: {class: "avg"} %>
-    <% if controller.action_name == "new" %>
-      <%= f.input :inventory_level, input_html: {class: "avg"} %>
-    <% end %>
-    <%= f.input :reorder_level, input_html: {class: "avg"} %>
+    <div class="row align-justify">
+      <div class="medium-3 columns">
+        <%= f.input :weight, input_html: {class: "avg"} %>      
+      </div>
+      <div class="medium-3 columns">
+        <% if controller.action_name == "new" %>
+          <%= f.input :inventory_level, input_html: {class: "avg"} %>
+        <% end %>
+      </div>
+      <div class="medium-3 columns">
+        <%= f.input :reorder_level, input_html: {class: "avg"} %>
+      </div>
+    </div>
     <%= f.input :active %>
 
 
     <div class="form-actions">
-      <%= f.submit nil, :class => 'button radius' %>
+      <%= f.submit nil, :class => 'button success radius' %>
       <%= link_to 'Cancel', items_path, :class => 'button alert radius' %>
     </div>
   </fieldset>
