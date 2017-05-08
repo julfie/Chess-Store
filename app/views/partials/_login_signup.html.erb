@@ -1,0 +1,20 @@
+<div class="reveal" id="login_box" data-reveal>
+
+  <ul class="tabs" data-tabs id="example-tabs">
+    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Login</a></li>
+    <li class="tabs-title"><a href="#panel2">Sign-Up</a></li>
+  </ul>
+
+  <div class="tabs-content" data-tabs-content="example-tabs">
+    <div class="tabs-panel is-active" id="panel1">
+      <%= render :partial => "partials/login_form" %>
+    </div>
+    <div class="tabs-panel" id="panel2">
+      <h3>Sign Up</h3>
+      <%= render :partial => "partials/signup_form" %>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
