@@ -289,11 +289,8 @@ DEPENDENCIES
   faker
   font-awesome-sass
   foundation-rails (~> 6.3, >= 6.3.1.0)
-<<<<<<< HEAD
   fusioncharts-rails
   geocoder
-=======
->>>>>>> cart
   hirb
   jbuilder (~> 2.0)
   jquery-rails
