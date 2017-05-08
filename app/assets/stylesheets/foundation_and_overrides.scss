@@ -497,6 +497,10 @@ li.well {
         FORM
 -------------------------------- */
 
+#user-form {
+  display: none;
+}
+
 /* Cutting back the spacing on simple_form... */
 .form-horizontal .control-label {
     float: left;

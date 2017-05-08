@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
   authorize_resource
-  before_action :check_login
+  before_action :check_login, except: [:new, :create]
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
   # GET /schools
@@ -30,13 +30,14 @@ class SchoolsController < ApplicationController
     @school = School.new(school_params)
 
     respond_to do |format|
-      if @school.save
+      # if @school.save
         format.html { redirect_to @school, notice: 'School was successfully created.' }
         format.json { render :show, status: :created, location: @school }
-      else
-        format.html { render :new }
-        format.json { render json: @school.errors, status: :unprocessable_entity }
-      end
+        format.js
+      # else
+      #   format.html { render :new }
+      #   format.json { render json: @school.errors, status: :unprocessable_entity }
+      # end
     end
   end
 
@@ -72,6 +73,6 @@ class SchoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
-      params.fetch(:school, {})
+      params.require(:school).permit(:name, :street_1, :street_2, :city, :state, :zip, :min_grade, :max_grade, :active)
     end
 end

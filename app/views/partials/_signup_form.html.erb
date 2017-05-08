@@ -1,54 +1,43 @@
-<div class="multi-step-process">
-  <div class="multi-step-process-step">
-    <ul class="accordion" data-accordion>
-      <li class="accordion-item is-active" data-accordion-item>
-        <a href="#" class="accordion-title">1. School <span class="multi-step-title-subheader">Step 1 of 2</span></a>
-        <div class="accordion-content" data-tab-content>
-          <form class="multi-step-form">
-            <div class="row">
-              <div class="small-12 columns">
 
-                <%= simple_form_for new_school_path do |f| %>
-                  <%= f.input :name, input_html: { placeholder:"Name" }, label: false %>
-                  <%= f.input :street_1, input_html: { placeholder:"Street 1" }, label: false %>
-                  <%= f.input :street_2, input_html: { placeholder:"Street 2" }, label: false %>
-                  <%= f.input :city, input_html: { placeholder:"City" }, label: false %>
-                  <%= f.input_field :state, collection: School::STATES_LIST, include_blank: true, inline_label: 'State', input_html: { class:"sch_state_form" } %>
-                  <%= f.input :zip, input_html: { placeholder:"Zip" }, label: false %>
-                  <%= f.input :min_grade, as: :integer, input_html: { placeholder:"Minimum Grade" }, label: false %>
-                  <%= f.input :max_grade, as: :integer, input_html: { placeholder:"Maximum Grade" }, label: false %>
-                  <%= submit_tag "Submit and Continue", class: 'secondary button expanded', remote: true %>
-                <% end %>
+<a href="#" class="accordion-title">1. School <span class="multi-step-title-subheader">Step 1 of 2</span></a>
+<div class="multi-step-form" id="school-form">
+  <div class="row">
+    <div class="small-12 columns">
 
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
-      
-      <li class="accordion-item" data-accordion-item>
-        <a href="#" class="accordion-title">2. Account <span class="multi-step-title-subheader">Step 2 of 2</span></a>
-        <div class="accordion-content" data-tab-content>
-          <form class="multi-step-form">
-            <div class="row">
-              <div class="small-11 column">
+      <%= simple_form_for School.new, remote: true  do |f| %>
+        <%= f.input :name, input_html: { placeholder:"Name" }, label: false %>
+        <%= f.input :street_1, input_html: { placeholder:"Street 1" }, label: false %>
+        <%= f.input :street_2, input_html: { placeholder:"Street 2" }, label: false %>
+        <%= f.input :city, input_html: { placeholder:"City" }, label: false %>
+        <%= f.input_field :state, collection: School::STATES_LIST, include_blank: true, input_html: { class:"sch_state_form" }, label: true %>
+        <%= f.input :zip, input_html: { placeholder:"Zip" }, label: false %>
+        <div class="small-1 columns"> <br> </div>
+        <%= f.input :min_grade, as: :integer, input_html: { placeholder:"Minimum Grade", class:"small-4 columns" }, label: false %>
+        <div class="small-1 columns"> <p> </p> </div>
+        <%= f.input :max_grade, as: :integer, input_html: { placeholder:"Maximum Grade", class:"small-4 columns" }, label: false %>
+        <%= submit_tag "Submit and Continue", class: 'secondary button expanded' %>
+      <% end %>
 
-                <%= simple_form_for new_user_path do |f| %>
-                  <%= f.input :first_name, input_html: {placeholder:"First Name"}, label: false %>
-                  <%= f.input :last_name, input_html: {placeholder:"Last Name"}, label: false %>
-                  <%= f.input :email, input_html: {placeholder:"Email"}, label: false %>
-                  <%= f.input :phone, input_html: {placeholder:"Phone Number"}, label: false, required: false  %>
-                  <%= f.input :username, input_html: {placeholder:"Username"}, label: false %>
-                  <%= f.input :password, input_html: {placeholder:"Password"}, label: false %>
-                  <%= submit_tag "Create Account", class: 'secondary button expanded' %>
-                <% end %>
+    </div>
+  </div>
+</div>
 
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
-      
-    </ul>
+<a href="#" class="accordion-title">2. Account <span class="multi-step-title-subheader">Step 2 of 2</span></a>
+<div class="multi-step-form" id="user-form">
+  <div class="row">
+    <div class="small-12 column">
+
+      <%= simple_form_for User.new do |f| %>
+        <%= f.input :first_name, input_html: {placeholder:"First Name"}, label: false %>
+        <%= f.input :last_name, input_html: {placeholder:"Last Name"}, label: false %>
+        <%= f.input :email, input_html: {placeholder:"Email"}, label: false %>
+        <%= f.input :phone, input_html: {placeholder:"Phone Number"}, label: false, required: false  %>
+        <%= f.input :username, input_html: {placeholder:"Username"}, label: false %>
+        <%= f.input :password, input_html: {placeholder:"Password"}, label: false %>
+        <%= f.input :password_confirmation, input_html: {placeholder:"Confirm Password"}, label: false %> 
+        <%= submit_tag "Create Account", class: 'secondary button expanded' %>
+      <% end %>
+
+    </div>
   </div>
 </div>
