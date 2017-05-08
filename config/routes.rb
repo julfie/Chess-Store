@@ -28,7 +28,6 @@ Rails.application.routes.draw do
 
   #cart routes
   patch 'remove/:id' => 'cart#remove', as: :remove_from_cart
-  get 'calculate' => 'cart#calculate', as: :calculate_cart
   get 'destroy' => 'cart#destroy', as: :destroy_cart
   get 'add/:id' => 'cart#add', as: :add_to_cart
   get 'get' => 'cart#get', as: :get_cart

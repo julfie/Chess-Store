@@ -1,13 +1,42 @@
-<ul class="vertical menu c-items" id='cart-menu'>
+<div class="checkout-summary" id='cart-menu'>
+  <div class="checkout-summary-title">
+    <h5>Your Cart</h5>
+    <h5><%= @cart.length %> Items</h5>
+  </div>
+
   <% unless @cart.nil? || @cart.empty? %>
     <% @cart.each do |oi| %>
-      <li>
-        <br>
-        <%= link_to  oi.item.name, item_path(oi.item) %>
-        <%= number_to_currency(oi.item.current_price) %>
-        <%= oi.quantity %>
-        <%= link_to (image_tag "remove-item.svg"), remove_from_cart_path(oi.item.id), remote: true, method: 'patch' %>
-      </li>
+      <div class="checkout-summary-item">
+        <% item = Item.find(oi.item_id) %>
+        <% if item.photo_url.nil? %>
+            <%= image_tag 'img_not_available.png', class: 'cart_img' %>
+        <% else %>
+            <%= image_tag item.photo_url, class: 'item_show_img' %>
+        <% end %>
+        <div class="item-name">
+          <a><%= link_to  oi.item.name, item_path(oi.item) %></a>
+          <p><span class="title">Quantity: </span><%= oi.quantity %></p>
+          <p><span class="title">Subtotal: </span>oi.subtotal</p>
+        </div>
+        <div class="item-price">
+          <p class="title">$24.99</p>
+          <%= link_to (image_tag "remove-item.svg"), remove_from_cart_path(oi.item.id), remote: true, method: 'patch' %>
+        </div>
+      </div>
     <% end %>
   <% end %>
-</ul>
+      
+  <div class="checkout-summary-details">
+    <div class="left">
+      <p><strong>Subtotal:</strong></p>
+      <p><strong>Shipping:</strong></p>
+      <p><strong>Total:</strong></p>
+    </div>
+    <div class="right">
+      <p><%= number_to_currency(@subtotal) %></p>
+      <p><%= number_to_currency(@shipc) %></p>
+      <p><%= number_to_currency(@total) %></p>
+    </div>
+  </div>
+  <button class="button expanded" id="checkout-b">Proceed to Checkout</button>
+</div>

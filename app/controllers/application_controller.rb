@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ChessStoreHelpers::Shipping
   include ChessStoreHelpers::Cart
   before_action :get_cart
   # Prevent CSRF attacks by raising an exception.
@@ -30,6 +31,10 @@ class ApplicationController < ActionController::Base
   def get_cart
     unless session[:cart].nil?
       @cart = get_list_of_items_in_cart
+
+      @subtotal = calculate_cart_items_cost
+      @shipc = calculate_cart_shipping
+      @total = @subtotal + @shipc
     end
   end
 

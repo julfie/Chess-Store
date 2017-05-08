@@ -308,6 +308,7 @@ thead tr {
 .item_show_img {
   width: 100%;
   height: auto;
+  border: 0px;
 }
 
 .user {
@@ -379,6 +380,7 @@ thead {
   background-color: transparent;
   color: #835424;
   text-align: center;
+  border: 0px;
 }
 
 .card-divider {
@@ -438,6 +440,56 @@ li.well {
 
 .cart-close, .cart-checkout {
   display: block;
+  background-color: #baca43;
+}
+
+.checkout-summary {
+  padding-top: 3em;
+  max-width: 500px;
+  background-color: $white;
+}
+
+.checkout-summary-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid $light-gray;
+}
+
+.checkout-summary-item {
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid $light-gray;
+  .item-name,
+  .item-price {
+    padding: 0 1rem;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .title {
+    font-weight: bold;
+  }
+}
+
+.checkout-summary-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid $light-gray;
+  border-top: none;
+}
+
+.cart_img {
+  width: 60px;
+  height: 60px;
+}
+
+#checkout-b {
   background-color: #baca43;
 }
 
