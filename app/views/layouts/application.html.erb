@@ -23,16 +23,17 @@
 
       <%= render :partial => "cart/cart_slide" %>
       
-      <!--<div class="off-canvas-content" data-off-canvas-content>-->
-        <div class="row">
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div class="row align-center">
           <div class="small-12 columns" id="main_content">
             <%= render :partial => "partials/flash" %>
             <%= yield %>
           </div>
         </div>
+      </div>
 
         <footer>
-          <div class="small-12 columns" id="footer">
+          <div id="footer">
             <%= render partial: 'partials/footer' %>
           </div>
         </footer> 

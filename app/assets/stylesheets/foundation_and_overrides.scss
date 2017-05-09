@@ -91,11 +91,10 @@
 }
 
 .top-bar-title {
-  width: 35%;
+  width: 25%;
 }
 
 .top-bar-title a img {
-  width: 50%;
   background: transparent !important;
 }
 
@@ -219,7 +218,7 @@ h4.login{
 }
 
 div#responsive-menu {
-  margin-top: 0.5rem;  
+  margin-top:1rem;  
 }
 
 #base-dash {
@@ -258,8 +257,9 @@ thead tr {
 }
 
 #qty {
-  font-family: 'Lato Light';
-  font-size: rem-calc(13);
+  font-family: 'Lato-Light';
+  font-size: 1.5rem;
+  font-weight: initial;
   display: inline-block
 }
 
@@ -325,6 +325,12 @@ thead tr {
 #footer a {
   color: #333333;
   text-decoration: none;
+  text-align: center;
+}
+
+img#footer_bar {
+  max-width: 100%;
+  z-index: -1;
 }
 
 #footer a:hover {
