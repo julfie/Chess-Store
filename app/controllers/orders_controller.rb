@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  include ChessStoreHelpers::Cart
+
   authorize_resource
   before_action :check_login
   before_action :set_order, only: [:show, :edit, :update, :destroy]
@@ -15,6 +17,7 @@ class OrdersController < ApplicationController
   end
 
   # GET /orders/new
+
   def new
     @order = Order.new
   end
@@ -30,6 +33,11 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+
+        save_each_item_in_cart(params[:id])
+        clear_cart
+        destroy_cart
+
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else

@@ -25,10 +25,4 @@ class CartController < ActionController::Base
     @total = @subtotal + @shipc
   end
 
-  def checkout
-    save_each_item_in_cart(params[:id])
-    clear_cart
-    destroy_cart
-  end
-
 end

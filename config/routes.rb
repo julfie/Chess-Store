@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :schools
   resources :users
   resources :orders
+  get 'checkout' => 'orders#new', as: :new
   resources :items
   resources :purchases
   resources :item_prices

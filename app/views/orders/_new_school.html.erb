@@ -1,0 +1,24 @@
+<%= simple_form_for new_school_path, html: { class: 'multi-step-checkout-form', multipart: true } do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="row align-center">
+    <div class="form-inputs small-10 columns">
+        <%= f.input :name, input_html: { placeholder:"School Name" }, label: false %>
+        <%= f.input :street_1, input_html: { placeholder:"Street 1" }, label: false %>
+        <%= f.input :street_2, input_html: { placeholder:"Street 2" }, label: false %>
+        <%= f.input :city, input_html: { placeholder:"City" }, label: false %>
+        <%= f.input_field :state, collection: School::STATES_LIST, include_blank: true, input_html: { class:"sch_state_form" }, label: true %>
+        <%= f.input :zip, input_html: { placeholder:"Zip" }, label: false %>
+        <br>
+        <div class="small-1 columns"> <br> </div>
+            <%= f.input :min_grade, as: :integer, input_html: { placeholder:"Minimum Grade", class:"small-4 columns" }, label: false %>
+        <div class="small-1 columns"> <br> </div>
+            <%= f.input :max_grade, as: :integer, input_html: { placeholder:"Maximum Grade", class:"small-4 columns" }, label: false %>
+    </div>
+
+        <div><hr class="multi-step-checkout-form-divider"></div>
+        <br>
+  </div>
+  
+<% end %>

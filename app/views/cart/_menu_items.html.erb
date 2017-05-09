@@ -20,10 +20,10 @@
         <div class="item-name">
           <a><%= link_to  oi.item.name, item_path(oi.item) %></a>
           <p><span class="title">Quantity: </span><%= oi.quantity %></p>
-          <p><span class="title">Subtotal: </span>oi.subtotal</p>
+          <p><span class="title">Subtotal: </span><%= number_to_currency oi.subtotal %></p>
         </div>
         <div class="item-price">
-          <p class="title">$24.99</p>
+          <p class="title"><%= number_to_currency oi.item.current_price %></p>
           <%= link_to (image_tag "remove-item.svg"), remove_from_cart_path(oi.item.id), remote: true, method: 'patch' %>
         </div>
       </div>
@@ -42,5 +42,8 @@
       <p><%= number_to_currency(@total) %></p>
     </div>
   </div>
-  <button class="button expanded" id="checkout-b">Proceed to Checkout</button>
+  
+  <button class="button expanded" id="checkout-b">
+    <%= link_to  "Proceed to Checkout", checkout_path %>
+  </button>
 </div>
