@@ -14,15 +14,7 @@
 
       <!-- options for logged in user -->
       <% if logged_in? %>
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li> 
-            <%= link_to "Welcome, #{current_user.first_name}", user_path(current_user), class: 'login' %>
-            <ul class="menu">
-              <li><%= link_to "Edit settings", edit_user_path(current_user), class: 'drop login' %></li>
-              <li><%= link_to "Logout", logout_path, class: 'drop login' %></li>
-            </ul>
-          </li>
-        </ul>
+        <%= link_to "Welcome, #{current_user.first_name}", user_path(current_user), class: 'login' %> :: <%= link_to "Logout", logout_path, class: 'login' %>
 
         <%= image_tag 'cart', class: 'cart right', :data => { 'toggle' => "cart", 'transition' => "overlap"} %>
 
