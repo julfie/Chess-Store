@@ -26,5 +26,3 @@ $('.form-floating-label input, .form-floating-label textarea').blur(function(){
     $(this).parent().removeClass('has-value');
   }
 });
-
-

@@ -1,0 +1,28 @@
+<div class="checkout-panel" id="checkout-1">
+    <div class="panel-body">
+    <h2 class="title">Checkout</h2>
+
+    <div class="progress-bar">
+        <div class="step active"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+    </div>
+
+    <div class="input-fields">
+        <div class="column">
+        <label for="cardholder">School to Ship to</label>
+            <%= f.association :school, label: false, input_html: { class: 'check-input' } %>
+
+        </div>
+        <div class="column">
+        <label for="cardnumber">If school is not available: </label>
+        <%= link_to "Add a New School", new_school_path, class: 'check-input secondary button radius expanded' %>
+        </div>
+    </div>
+    </div>
+
+    <div class="panel-footer">
+    <button type=""></button>
+    <button class="btn next-btn" id="checkout_btn_1">Next Step</button>
+    </div>
+</div>

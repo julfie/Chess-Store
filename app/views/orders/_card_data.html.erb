@@ -1,0 +1,36 @@
+<div class="checkout-panel" id="checkout-2">
+    <div class="panel-body">
+    <h2 class="title">Checkout</h2>
+
+    <div class="progress-bar">
+        <div class="step active"></div>
+        <div class="step active"></div>
+        <div class="step"></div>
+    </div>
+
+    <div class="input-fields">
+        <div class="column">
+        <label for="cardholder">Cardholder's Name</label>
+        <input type="" name="" value=<%= @current_user.proper_name %> id='cardholder', class='check-input' disabled >
+
+        <div class="small-inputs">
+            <div>
+            <label for="date">Valid through</label>
+            <%= f.input :expiration_year, as: :date, discard_day:true, discard_month:true, label: false, input_html: { id: 'date', class: 'check-input c' } %>
+            <%= f.input :expiration_month, as: :date, discard_day:true, discard_year:true, label: false, input_html: { id: 'date', class: 'check-input c' } %>
+            </div>
+        </div>
+
+        </div>
+        <div class="column">
+        <label for="cardnumber">Card Number</label>
+        <%= f.input :credit_card_number, label: false, input_html: { id: 'cardnumber', class: 'check-input' } %>
+        </div>
+    </div>
+    </div>
+
+    <div class="panel-footer">
+    <button class="btn back-btn" id="back_btn_1">Back</button>
+    <button class="btn next-btn" id="checkout_btn_2">Next Step</button>
+    </div>
+</div>
