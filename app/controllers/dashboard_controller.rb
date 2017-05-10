@@ -19,7 +19,9 @@ class DashboardController < ApplicationController
         @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10)
       end
       if (current_user.role? :admin)
-        @profits = Order.paid.all.inject(0) { |sum, o| sum + o.grand_total }
+        @profits = Order.all.inject(0) { |sum, o| sum + o.grand_total }
+        @salecount = Order.all.count
+        @loss = Purchase.loss.all.inject(0) { |sum, o| sum + o.item.current_price }
       end
     end
   end

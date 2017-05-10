@@ -174,8 +174,9 @@ h4.login{
 
 .top-bar ul{
   color: white;
-  background: transparent;
+  background-color: black;
   font-size: 1.5rem !important;
+  border: 0px;
 }
 
 .item_show_img {
@@ -964,4 +965,17 @@ $highlight-color: dodgerblue;
   margin-top: 2px;
   font-size: 0.9em;
   font-weight: normal;
+}
+
+
+.row.align-center.top {
+  padding-top: 3rem;
+}
+
+
+#order_user_info {
+  text-align: right;
+  h4 {
+    display: inline;
+  }
 }

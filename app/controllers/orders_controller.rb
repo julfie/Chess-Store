@@ -8,12 +8,14 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.chronological.all
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @subtotal = @order.order_items.inject(0) { |sum, o| sum + o.subtotal }
+    @items = @order.order_items
   end
 
   # GET /orders/new

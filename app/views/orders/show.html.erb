@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= render partial: "partials/show_structure", locals: {model_name: "order", 
+                                                        primary: "order_details", 
+                                                        secondary: nil,
+                                                        sidebar: nil,
+                                                        bbar: nil,
+                                                        object: @order} %>
+
+<%= link_to 'Edit', edit_user_path(@order) %> |
+<%= link_to 'Back', users_path %>
