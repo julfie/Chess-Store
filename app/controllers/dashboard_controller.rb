@@ -4,7 +4,9 @@ class DashboardController < ApplicationController
 
   def dashboard
     if logged_in?
-      if (current_user.role? :shipper)
+      if (current_user.role? :customer)
+        redirect_to home_path
+      elsif (current_user.role? :shipper)
         @unshipped_orders = Order.not_shipped.chronological
         unless @unshipped_orders.empty? || @unshipped_orders.nil?
           @order_items = Order.not_shipped.chronological.first.order_items.unshipped
@@ -14,7 +16,10 @@ class DashboardController < ApplicationController
         @boards = Item.active.for_category('boards').alphabetical.paginate(:page => params[:page]).per_page(10)
         @pieces = Item.active.for_category('pieces').alphabetical.paginate(:page => params[:page]).per_page(10)
         @clocks = Item.active.for_category('clocks').alphabetical.paginate(:page => params[:page]).per_page(10)
-        @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10) 
+        @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10)
+      end
+      if (current_user.role? :admin)
+        @profits = Order.paid.all.inject(0) { |sum, o| sum + o.grand_total }
       end
     end
   end

@@ -109,7 +109,7 @@
 .login{
   color: #baca43;
   font-size: 1rem !important;
-  line-height: 2.5rem !important;
+  line-height: 2.5rem;
   padding: 4px;
   border: 0px;
 }
@@ -121,7 +121,8 @@
 
 h4.login{
   color: #baca43;
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
+  line-height: 1rem !important;
 }
 
 .tabs-title h4 {
@@ -802,6 +803,7 @@ $highlight-color: dodgerblue;
 -------------------------------- */
 
 .alert-box {
+  z-index: 6;
   padding-right: 3.25rem;
   width: 100%;
 }
@@ -871,6 +873,8 @@ $highlight-color: dodgerblue;
     }
 }
 
+// dash link card
+
 .card.dash {
   margin: 7rem 0rem;
   position: absolute;
@@ -887,4 +891,77 @@ $highlight-color: dodgerblue;
   font-family: 'Neou-thin';
   font-size: 2.4rem;
   line-height: 2rem;
+}
+
+// HOME HERO
+
+.hero-section2 {
+  z-index: -1;
+  background: url("learn-to-play.png") 100% no-repeat;
+  background-size: cover;
+  height: 60vh;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+    img {
+      max-width: 150%;
+      left: 0;
+      top: 0;
+    }
+}
+
+.hero-section2 .hero-section-text {
+  color: #fefefe;
+  text-shadow: 1px 1px 2px #0a0a0a;
+}
+
+//  Stats List
+
+
+.stats-list {
+  list-style-type: none;
+  clear: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.stats-list .stats-list-positive {
+  color: #3adb76;
+}
+
+.stats-list .stats-list-negative {
+  color: #cc4b37;
+}
+
+.stats-list > li {
+  display: inline-block;
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #cacaca;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.stats-list > li:last-child {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-list > li .stats-list-label {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.9em;
+  font-weight: normal;
 }
