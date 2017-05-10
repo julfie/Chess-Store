@@ -6,7 +6,9 @@ class HomeController < ApplicationController
       if (current_user.role? :admin) || (current_user.role? :manager)
         @items_to_reorder = Item.need_reorder.alphabetical.to_a
       end
-      @recents = @current_user.orders.first.order_items
+      unless @current_user.orders.first.nil?
+        @recents = @current_user.orders.first.order_items
+      end
     end
     @featured = Item.all.sample(8)
   end
