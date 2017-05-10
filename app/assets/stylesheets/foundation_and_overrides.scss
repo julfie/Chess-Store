@@ -55,25 +55,6 @@
 // @include motion-ui-animations;
 
 
-.tl_name {
-  width: 225px;
-  display: block;
-  position: absolute;
-}
-
-.tl_date {
-  width: 65px;
-  display: block;
-  position: absolute;
-  margin-left: 250px;
-}
-
-.tl_controls {
-  width:  68px;
-  display: block;
-  margin-left: 330px;
-}
-
 .supertiny {
   font-size:5px;
   text-decoration:none;
@@ -103,6 +84,8 @@
 }
 
 .contain-to-grid {
+  z-index: 1;
+  position: relative;
   background-color: black;
 }
 
@@ -612,7 +595,7 @@ li.well {
 }
 
 .cart-slide, .cart-slide.vertical-menu{
-  z-index: -1;
+  // z-index: -1;
   padding-top: 6rem;
   font-family: 'lato, sans-serif';
   background-color: white !important;
