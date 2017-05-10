@@ -612,6 +612,8 @@ li.well {
 }
 
 .cart-slide, .cart-slide.vertical-menu{
+  z-index: -1;
+  padding-top: 6rem;
   font-family: 'lato, sans-serif';
   background-color: white !important;
   color: black;
@@ -804,6 +806,7 @@ $highlight-color: dodgerblue;
 -------------------------------- */
 
 .alert-box {
+  position: relative;
   z-index: 6;
   padding-right: 3.25rem;
   width: 100%;
@@ -898,7 +901,11 @@ $highlight-color: dodgerblue;
 
 .hero-section2 {
   z-index: -1;
-  background: url("learn-to-play.png") 100% no-repeat;
+  position: relative;
+  top: -3rem;
+  left: 0;
+  width: 100%;
+  background: url("learn-to-play.png") 150% no-repeat;
   background-size: cover;
   height: 60vh;
   text-align: center;
@@ -913,7 +920,7 @@ $highlight-color: dodgerblue;
           justify-content: center;
 
     img {
-      max-width: 150%;
+      max-width: 200%;
       left: 0;
       top: 0;
     }
