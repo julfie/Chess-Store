@@ -34,9 +34,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
 
-        save_each_item_in_cart(params[:id])
-        clear_cart
-        destroy_cart
+        @order.pay
 
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
@@ -45,6 +43,12 @@ class OrdersController < ApplicationController
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def process_cart
+    save_each_item_in_cart(params[:id])
+    clear_cart
+    destroy_cart
   end
 
   # PATCH/PUT /orders/1
@@ -79,6 +83,8 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.fetch(:order, {})
+      params[:scool][:user_id] = current_user.id
+      params[:scool][:date] = Date.current
+      params.require(:order).permit(:date, :school_id, :user_id, :grand_total, :payment_receipt, :credit_card_number, :expiration_year, :expiration_month)
     end
 end
