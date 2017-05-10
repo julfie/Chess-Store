@@ -124,23 +124,6 @@ h4.login{
   font-size: 1.5rem;
 }
 
-.card.dash {
-  position: absolute;
-  background-color: transparent;
-  border: 0px;
-  left: 60%;
-  top: 30em;
-  padding-top: 1rem;
-  z-index: 1;  
-}
-
-.card.dash a {
-  color: white;
-  font-family: 'Neou-thin';
-  font-size: 2.25rem;
-  line-height: 2rem;
-}
-
 .tabs-title h4 {
   color: #835424;
   font-size: rem-calc(16);
@@ -860,4 +843,48 @@ $highlight-color: dodgerblue;
           transform: translateY(-50%);
   right: 1rem;
   font-weight: bold;
+}
+
+/* -------------------------------- 
+          Dash Hero
+-------------------------------- */
+
+.hero-section {
+  z-index: -1;
+  background: url('/images/dash_bg.png') 100% no-repeat;
+  background-size: cover;
+  align-self: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+    img {
+      max-width: 150%;
+      left: 0;
+      top: 0;
+    }
+}
+
+.card.dash {
+  margin: 7rem 0rem;
+  position: absolute;
+  background-color: transparent;
+  border: 0px;
+  left: 60%;
+  top: 30em;
+  padding-top: 1rem;
+  z-index: 1;  
+}
+
+.card.dash a {
+  color: white;
+  font-family: 'Neou-thin';
+  font-size: 2.4rem;
+  line-height: 2rem;
 }
