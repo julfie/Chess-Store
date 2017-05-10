@@ -37,7 +37,7 @@ class Ability
       can :create, Purchase 
 
       # can read information about customers, schools and orders 
-      can :read, User, :id => user.customers
+      can :read, User, :id => User.customers
       can :read, School 
       can :read, Order
 
