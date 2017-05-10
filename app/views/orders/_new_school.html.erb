@@ -11,9 +11,9 @@
         <%= f.input_field :state, collection: School::STATES_LIST, include_blank: true, input_html: { class:"sch_state_form" }, label: true %>
         <%= f.input :zip, input_html: { placeholder:"Zip" }, label: false %>
         <br>
-        <div class="small-1 columns"> <br> </div>
+        <div class="small-1 columns"> &nbsp; </div>
             <%= f.input :min_grade, as: :integer, input_html: { placeholder:"Minimum Grade", class:"small-4 columns" }, label: false %>
-        <div class="small-1 columns"> <br> </div>
+        <div class="small-1 columns"> &nbsp; </div>
             <%= f.input :max_grade, as: :integer, input_html: { placeholder:"Maximum Grade", class:"small-4 columns" }, label: false %>
     </div>
 
