@@ -12,7 +12,8 @@
           <h5 id="item-card-name"><%= link_to item.name, item_path(item) %></h5>
           <p><%= number_to_currency item.current_price %></p>
           <% if can? :manage, Item, @user %>
-            <p><%= item.inventory_level %> / <%= item.reorder_level %></p>
+            <% num = item.inventory_level / item.reorder_level %>
+            <progress class="secondary" max="100" value="<%= num*10 %>"></progress>
           <% end %>
         </div>
       </div>
