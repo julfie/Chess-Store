@@ -12,8 +12,24 @@
           <h5 id="item-card-name"><%= link_to item.name, item_path(item) %></h5>
           <p><%= number_to_currency item.current_price %></p>
           <% if can? :manage, Item, @user %>
-            <% num = item.inventory_level / item.reorder_level %>
-            <progress class="secondary" max="100" value="<%= num*10 %>"></progress>
+            <% num = ((item.inventory_level / item.reorder_level)*10) %>
+            <% if num>100 %>
+              <% num = 100 %>
+            <% end %>
+            <% if num < 25 %>
+              <% color = 'alert' %>
+            <% elsif num < 50 %>
+              <% color = 'warning' %>
+            <% elsif num < 75 %>
+              <% color = 'primary' %>
+            <% else %>
+              <% color = 'secondary' %>
+            <% end %>
+            <div class="<%= color %> progress" aria-valuenow="<%= num %>" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-meter" style="width: <%= num %>%">
+                <p class="progress-meter-text"><%= num %>%</p>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
