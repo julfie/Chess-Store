@@ -5,10 +5,12 @@ class ItemsController < ApplicationController
 
   def index
     # get info on active items for the big three...
-    @boards = Item.active.for_category('boards').alphabetical.paginate(:page => params[:page]).per_page(10)
-    @pieces = Item.active.for_category('pieces').alphabetical.paginate(:page => params[:page]).per_page(10)
-    @clocks = Item.active.for_category('clocks').alphabetical.paginate(:page => params[:page]).per_page(10)
-    @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10)    
+    @items = Item.active.filter(params.slice(:category, :color, :starts_with)).alphabetical.paginate(:page => params[:page]).per_page(10)
+
+    # @boards = Item.active.for_category('boards').alphabetical.paginate(:page => params[:page]).per_page(10)
+    # @pieces = Item.active.for_category('pieces').alphabetical.paginate(:page => params[:page]).per_page(10)
+    # @clocks = Item.active.for_category('clocks').alphabetical.paginate(:page => params[:page]).per_page(10)
+    # @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10)    
     # get a list of any inactive items for sidebar
     if logged_in?
       if (current_user.role? :admin) || (current_user.role? :manager)
@@ -57,6 +59,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def set_item
     @item = Item.find(params[:id])
   end
