@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    format.js
   end
 
   def create
@@ -46,8 +45,10 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to item_path(@item), notice: "Successfully updated #{@item.name}."
-      format.js
+      respond_to do |format|
+        format.html { redirect_to item_path(@item), notice: "Successfully updated #{@item.name}." }
+        format.js
+      end
     else
       render action: 'edit'
     end

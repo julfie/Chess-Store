@@ -21,10 +21,6 @@ class OrderItem < ActiveRecord::Base
     self.item.price_on_date(date) * self.quantity
   end
   
-  def test
-    puts 'hello'
-  end
-
   def ship_item
     set_shipped_on_date_to_today
     reduce_inventory_of_item_by_quantity_ordered

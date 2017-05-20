@@ -1,6 +1,6 @@
 
 <div class="row align-center">
-  <div class="small-12 columns">
+  <div class="small-12 columns" id="item_details">
     <%= render :partial => "item_details" %>
   </div>
 </div>
@@ -17,10 +17,7 @@
 
     <div class="tabs-content" data-tabs-content="collapsing-tabs">
       <div class="tabs-panel" id="panel1c">
-        <p><b>Inventory Level</b>: <%= @item.inventory_level.nil? ? 'N/A' : @item.inventory_level %></p>
-        <p><b>Reorder Level</b>: <%= @item.reorder_level.nil? ? 'N/A' : @item.reorder_level %></p>
-        <p><b>Total weight</b>: <%= @item.weight.nil? ? 'N/A' : @item.weight %> lbs.</p>
-        <p><b>Category</b>: <%= @item.category.capitalize %></p>
+        <%= render :partial => "item_info" %>        
       </div>
       <div class="tabs-panel is-active" id="panel2c">
         <%= render :partial => "similar_items" unless @similar_items.empty?%>

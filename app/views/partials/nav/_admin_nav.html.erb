@@ -5,9 +5,7 @@
 <li>
   <%= link_to "Items", items_path %>
   <ul class="menu vertical">
-    <li><%= link_to "Item List", items_path %></li>
-    <li><%= link_to "Reorder List", home_path %></li>
-    <li><%= link_to "Add an Item", new_item_path %></li>
+    <li><%= link_to "New Item", new_item_path %></li>
   </ul>
 </li>
 
@@ -15,7 +13,6 @@
 <li>
   <%= link_to "Purchases", purchases_path %>
   <ul class="menu vertical">
-    <li><%= link_to "Purchases", purchases_path %></li>
     <li><%= link_to "New Purchase", new_purchase_path %></li>
   </ul>
 </li>
@@ -33,9 +30,11 @@
 <!-- options for users -->
 <li>
   <%= link_to "Users", users_path %>
+</li>
+
+<!-- options for schools --><li>
+  <%= link_to "Schools", schools_path %>
   <ul class="menu vertical">
-    <li><%= link_to "Employees", users_path %></li>
-    <li><%= link_to "Customers", users_path %></li>
-    <li><%= link_to "New USer", new_user_path %></li>
+    <li><%= link_to "New School", new_school_path %></li>
   </ul>
 </li>

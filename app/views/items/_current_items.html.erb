@@ -1,21 +1,38 @@
 <% unless items.nil? || items.empty? %>
   <h5 id="item-type"><%= item_type.capitalize %></h5>
-<div data-equalizer>
-  <% items.each do |item| %>
-    <div class="card item" data-equalizer-watch>
-        <% if item.photo_url.nil? %>
-          <%= image_tag 'img_not_available.png', class: 'item_show_img' %>
-        <% else %>
-          <%= image_tag item.photo_url, class: 'item_show_img' %>
-        <% end %>
-      <div class="card-divider">
-        <h5 id="item-card-name"><%= link_to item.name, item_path(item) %></h5>
-        <p><%= number_to_currency item.current_price %></p>
-        <% if can? :manage, Item, @user %>
-          <p>item.inventory_level</p>
-        <% end %>
+  <div data-equalizer>
+    <% items.each do |item| %>
+      <div class="card item" data-equalizer-watch>
+          <% if item.photo_url.nil? %>
+            <%= image_tag 'img_not_available.png', class: 'item_show_img' %>
+          <% else %>
+            <%= image_tag item.photo_url, class: 'item_show_img' %>
+          <% end %>
+        <div class="card-divider">
+          <h5 id="item-card-name"><%= link_to item.name, item_path(item) %></h5>
+          <p><%= number_to_currency item.current_price %></p>
+          <% if can? :manage, Item, @user %>
+            <% num = ((item.inventory_level / item.reorder_level)*10) %>
+            <% if num>100 %>
+              <% num = 100 %>
+            <% end %>
+            <% if num < 25 %>
+              <% color = 'alert' %>
+            <% elsif num < 50 %>
+              <% color = 'warning' %>
+            <% elsif num < 75 %>
+              <% color = 'primary' %>
+            <% else %>
+              <% color = 'secondary' %>
+            <% end %>
+            <div class="<%= color %> progress" aria-valuenow="<%= num %>" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-meter" style="width: <%= num %>%">
+                <p class="progress-meter-text"><%= num %>%</p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 <% end %>

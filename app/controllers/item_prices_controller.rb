@@ -8,14 +8,19 @@ class ItemPricesController < ApplicationController
 
   def new
     @item_price = ItemPrice.new
+    @item_price.item_id = params[:item_id] unless params[:item_id].nil?
   end
 
   def create
     @item_price = ItemPrice.new(item_price_params)
     @item_price.start_date = Date.current
+    
     if @item_price.save
-      @item = @item_price.item
-      redirect_to item_path(@item), notice: "Changed the price of #{@item.name}."
+      respond_to do |format|
+        @item = @item_price.item 
+        format.html { redirect_to item_path(@item), notice: "Changed the price of #{@item.name}." }
+        format.js
+      end
     else
       render action: 'new'
     end

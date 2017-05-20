@@ -1,15 +1,21 @@
 
 <footer>
 
+	<br><br>
+
+	<%= image_tag  "footer_bar.png", id: "footer_bar" %>
+
+	<br><br>	
+
+	<div id="copy">
+		Webmaster: <%= mail_to("jbfields@andrew.cmu.edu", "Juliann Fields", encode: "javascript") %> 
+		&nbsp;&nbsp;&copy 2017
+	</div>
+
 	<%= link_to 'Home', home_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
   <%= link_to 'About the Chess Store', about_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
 	<%= link_to 'Contact Us', contact_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
 	<%= link_to 'Privacy Policy', privacy_path %>
 	<br /><br />
-	
-	<div id="copy">
-		Webmaster: <%= mail_to("YOUR EMAIL", "YOUR NAME", encode: "javascript") %> 
-		&nbsp;&nbsp;&copy 2017
-	</div>
 
 </footer>

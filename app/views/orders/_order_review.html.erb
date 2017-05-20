@@ -1,0 +1,19 @@
+<div class="checkout-panel" id="checkout-3">
+    <div class="panel-body">
+    <h2 class="title">Checkout<span><h4>Review Order</h4></span></h2>
+    
+    <div class="progress-bar">
+        <div class="step active"></div>
+        <div class="step active"></div>
+        <div class="step active"></div>
+    </div>
+
+    <%= render :partial => "cart/order_item_table" %>
+
+    </div>
+
+    <div class="panel-footer">
+    <button class="btn back-btn" id="back_btn_1">Back</button>
+    </div>
+    <%= f.submit "Place Order", :class => 'secondary button radius expanded checkout-submit' %>
+</div>

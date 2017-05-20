@@ -16,6 +16,7 @@ class CreditCard
     @expiration_year, @expiration_month = expiration_year, expiration_month
     # set number to a string so we can use regex
     @number = number.to_s
+    @expiration_year.to_i
     # .detect (part of Enumerable) passes each entry in enum to block and returns the first for which block is not false. 
     # If no object matches, it will return nil
     @type = VALID_TYPES.detect { |type| type.match(@number) }
@@ -28,7 +29,7 @@ class CreditCard
   
   def expired?
     today = Date.current
-    expiration_year < today.year or (expiration_year == today.year and expiration_month < today.month)
+    expiration_year.to_i < today.year or (expiration_year.to_i == today.year and expiration_month < today.month)
   end
   
   def valid?

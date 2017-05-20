@@ -1,27 +1,22 @@
-<div class="reveal" id="login_box" data-reveal>
+<h3>Log In</h3>
 
-  <h3>Log In</h3>
-
-      <%= form_tag sessions_path do %>
-        <div class="control-group">
-          <%= label_tag :email %>
-          <div class="controls">
-            <%= text_field_tag :username, params[:username] %>
-          </div>
+    <%= form_tag sessions_path do %>
+      <div class="control-group">
+        <div class="controls">
+          <%= text_field_tag :username, params[:username], input_html: { placeholder:"Username" } %>
         </div>
+      </div>
 
-        <div class="control-group">
-          <%= label_tag :password %>
-          <div class="controls">
-            <%= password_field_tag :password %>
-          </div>
+      <div class="control-group">
+        <%= label_tag :password %>
+        <div class="controls">
+          <%= password_field_tag :password %>
         </div>
-        
-        <div class="actions"><%= submit_tag "Log In", class: 'button secondary' %></div>
-      <% end %>
+      </div>
+      
+      <div class="actions"><%= submit_tag "Log In", class: 'button secondary' %></div>
+    <% end %>
 
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-
-</div>
+<button class="close-button" data-close aria-label="Close modal" type="button">
+  <span aria-hidden="true">&times;</span>
+</button>

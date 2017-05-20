@@ -1,10 +1,55 @@
-<%= simple_form_for(@order) do |f| %>
-  <%= f.error_notification %>
+<div class="row align-center">
+  <%= simple_form_for(@order) do |f| %>
 
-  <div class="form-inputs">
-  </div>
+    <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="checkout-panel" id="checkout-1">
+      <div class="panel-body">
+        <h2 class="title">Checkout</h2>
+    
+        <div class="input-fields-1">
+          <div class="column">
+            <label for="cardholder">School to Ship to</label>
+              <%= f.association :school, label: false, input_html: { class: 'check-input' } %>
+    
+          </div>
+          <div class="column">
+            <label for="cardnumber">If school is not available: </label>
+            <%= link_to "Add a New School", new_school_path, class: 'check-input secondary button radius expanded' %>
+          </div>
+        </div>
+
+        <div class="spacer">
+          &nbsp;
+        </div>
+    
+        <div class="input-fields-2">
+          <div class="column">
+            <label for="cardholder">Cardholder's Name</label>
+            <input type="" name="" value='<%= @current_user.proper_name %>' id='cardholder' class='check-input' disabled >
+    
+            <div class="small-inputs">
+              <div>
+                <label for="date">Valid through</label>
+                <%= f.input :expiration_month, placeholder: '02', input_html: {id: 'date', class: 'check-input c' } , label: false %>
+                <%= f.input :expiration_year, placeholder: Date.today.year.to_s, input_html: { id: 'date', class: 'check-input c m' } , label: false %>
+              </div>
+            </div>
+    
+          </div>
+          <div class="column">
+            <label for="cardnumber">Card Number</label>
+            <%= f.input :credit_card_number, placeholder: '5123456789012345', label: false, input_html: { id: 'cardnumber', class: 'check-input' } %>
+          </div>
+        </div>
+      </div>
+    
+      <div class="panel-footer">
+        <h4>subtotal: <p><%= number_to_currency(@subtotal) %></p></h4>
+        <h4>Shipping: <p><%= number_to_currency(@shipc) %></p></h4>
+        <h4>Total: <p><%= number_to_currency(@total) %></p></h4>
+      </div>
+      <%= f.button :submit, "Place Order", class: 'secondary button radius expanded checkout-submit' %>
+    </div>
+  <% end %>
+</div>

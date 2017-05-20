@@ -1,14 +1,16 @@
 <%= simple_form_for @purchase, html: { class: 'form-horizontal', multipart: true } do |f| %>
-  <fieldset>
-    <legend><%= controller.action_name.capitalize %> Purchase</legend>
 
-    <%= f.input :item_id, collection: Item.active.to_a, include_blank: true, input_html: {class: "avg"} %>
-    <%= f.input :quantity, input_html: {class: "avg"} %>
-
-
-    <div class="form-actions">
-      <%= f.submit nil, :class => 'button radius' %>
-      <%= link_to 'Cancel', purchases_path, :class => 'button alert radius' %>
+  <div class="row align-center">
+  <h2><%= controller.action_name.capitalize %> Purchase</h2>
+    <div class="checkout-panel" id="checkout-1">
+      <div class="panel-body">
+        <div class="input-fields-1">
+          <%= f.input :item_id, collection: Item.active.to_a, include_blank: true, input_html: {class: "avg"} %>
+          <%= f.input :quantity, input_html: {class: "avg"} %>
+        </div>
+      </div>
     </div>
-  </fieldset>
+    <%= f.button :submit, class: 'secondary button expanded' %>
+    <%= link_to 'Cancel', schools_path, :class => 'button alert expanded' %>
+  </div>
 <% end %>

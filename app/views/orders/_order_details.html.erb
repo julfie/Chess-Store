@@ -1,0 +1,51 @@
+<h2><strong>order information</strong></h2>
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="2">
+                <h4><%= @order.school.name %></h4>
+                <p><%= @order.school.street_1 %></p>
+                <p><%= @order.school.city%>, <%= @order.school.state %></p>
+            </td>
+            <td colspan="4" id="order_user_info">
+                <h4><%= @order.user.proper_name %></h4>
+                <p><%= @order.date %></p>
+                <p><%= @order.payment_receipt %></p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @items.each do |oi| %>
+            <tr>
+                <td>
+                    <% item = Item.find(oi.item_id) %>
+                    <% if item.photo_url.nil? %>
+                        <%= image_tag 'img_not_available.png', class: 'cart_img' %>
+                    <% else %>
+                        <%= image_tag item.photo_url, class: 'item_show_img' %>
+                    <% end %>
+                </td>
+                <td><%= link_to  oi.item.name, item_path(oi.item) %></td>
+                <td><%= number_to_currency oi.item.current_price %></td>
+                <td>x<%= oi.quantity %></td>
+                <td><%= number_to_currency oi.subtotal %></td>
+                <td><%= link_to (image_tag "remove-item.svg"), remove_from_cart_path(oi.item.id), remote: true, method: 'patch' %></td>
+            </tr>
+        <% end %>
+        <tr class="cart-totals">
+            <td colspan="3"></td>
+            <td>
+                <p><strong>Subtotal:</strong></p>
+                <p><strong>Shipping:</strong></p>
+                <p><strong>Total:</strong></p>
+            </td>
+            <td>
+                <p><%= number_to_currency(@subtotal) %></p>
+                <p><%= number_to_currency(@order.shipping_costs) %></p>
+                <p><%= number_to_currency(@order.grand_total) %></p>
+            </td>
+            <td colspan="1"></td>
+        </tr>
+    </tbody>
+</table>

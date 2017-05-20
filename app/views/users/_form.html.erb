@@ -1,10 +1,27 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+<div class="row align-center">
+  <div class="checkout-panel" id="checkout-1">
+      <div class="panel-body">
+        <div class="input-fields-1">
+          <div class="column">
+            <label for="cardholder"></label>
+              <%= f.input :first_name %>
+              <%= f.input :email %>
+              <%= f.input :username %>
+          </div>
+          <div class="column">
+            <label for="cardnumber"></label>
+            <%= f.input :last_name %>
+            <%= f.input :phone %>
+            <label for="cardholder">&nbsp;</label>
+            <% if can? :manage, @user %>
+                <%= f.input :active %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <%= f.button :submit, class: 'secondary button radius expanded' %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+</div>
 <% end %>

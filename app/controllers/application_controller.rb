@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  include ChessStoreHelpers::Shipping
+  include ChessStoreHelpers::Cart
+  before_action :get_cart
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -25,18 +28,14 @@ class ApplicationController < ActionController::Base
     redirect_to login_url, alert: "You need to log in to view this page." if current_user.nil?
   end
 
-  def add_to_cart
-  end
-
-  def remove_from_cart
-    remove_item_from_cart(item_id)
-  end
-
-  def calculate_cart
-  end
-
   def get_cart
-    cart.get_list_of_items_in_cart
+    unless session[:cart].nil?
+      @cart = get_list_of_items_in_cart
+
+      @subtotal = calculate_cart_items_cost
+      @shipc = calculate_cart_shipping
+      @total = @subtotal + @shipc
+    end
   end
 
 end

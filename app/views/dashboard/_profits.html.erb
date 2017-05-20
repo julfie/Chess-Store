@@ -1,0 +1,15 @@
+<div class="row align-center top">
+    <div class="small-12 columns">
+        <ul class="stats-list">
+            <li>
+                <%= number_to_currency(@profits) %> <span class="stats-list-label">Total Profit</span>
+            </li>
+            <li class="stats-list-positive">
+                <%= @salecount %> <span class="stats-list-label">Sales</span>
+            </li>
+            <li class="stats-list-negative">
+                <%= number_to_currency(@loss) %> <span class="stats-list-label">Revenue Lost</span>
+            </li>
+        </ul>
+    </div>
+</div>

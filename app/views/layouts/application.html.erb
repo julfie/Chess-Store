@@ -6,32 +6,41 @@
 
     <title>Alex and Mark Chess Store :: <%= controller.controller_name.capitalize %></title>
 
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico" >
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200|Lato" rel="stylesheet">
 
     <%= stylesheet_link_tag    "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <div id="title_area">
-      <%= render :partial => "partials/nav" %>      
-    </div>
-    
-    <div class="row">
-      <div class="small-12 columns" id="main_content">
-        <%= render :partial => "partials/flash" %>
-        <%= yield %>
-      </div>
-    </div>
 
-    <footer>
-      <div class="small-12 columns" id="footer">
-        <%= render partial: 'partials/footer' %>
+    <div class="off-canvas-wrapper">
+      <div id="title_area">
+        <%= render :partial => "partials/nav" %>      
       </div>
-    </footer> 
 
-    <%= javascript_include_tag    "application" %>
+      <%= render :partial => "cart/cart_slide" %>
+      
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div class="row align-center">
+          <div class="small-12 columns" id="main_content">
+            <%= render :partial => "partials/flash" %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+
+        <footer>
+          <div id="footer">
+            <%= render partial: 'partials/footer' %>
+          </div>
+        </footer> 
+      <!--</div>-->
+
+      <%= javascript_include_tag    "application" %>
+    </div>
   </body>
 </html>

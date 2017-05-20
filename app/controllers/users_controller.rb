@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   authorize_resource
-  before_action :check_login
+  before_action :check_login, except: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -30,15 +30,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
         redirect_to home_path, notice: "Thank you for signing up!"
       else
-        flash[:error] = "This user could not be created."
+        flash[:error] = @user.errors.full_messages #"This user could not be created."
         render "new"
       end
-    end
   end
 
   # PATCH/PUT /users/1
@@ -73,10 +71,9 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      if current_user && current_user.role?(:admin)
-        params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :role, :active)  
-      else
-        params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :active)
+      if params[:user][:role].nil?
+        params[:user][:role] = 'customer'
       end
+      params.require(:user).permit(:first_name, :last_name, :email, :phone, :username, :password, :password_confirmation, :role, :active)
     end
 end

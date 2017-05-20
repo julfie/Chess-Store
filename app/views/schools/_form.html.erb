@@ -1,10 +1,28 @@
 <%= simple_form_for(@school) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="row align-center">
+    <div class="checkout-panel" id="checkout-1">
+      <div class="panel-body">
+        <div class="input-fields-1">
+          <%= f.input :name, input_html: { placeholder:"Name" }, label: false %>
+          <%= f.input :street_1, input_html: { placeholder:"Street 1" }, label: false %>
+          <%= f.input :street_2, input_html: { placeholder:"Street 2" }, label: false %>
+          <%= f.input :city, input_html: { placeholder:"City" }, label: false %>
+          <%= f.input_field :state, collection: School::STATES_LIST, prompt: "State", include_blank: true, input_html: { class:"sch_state_form" }, label: true %>
+          <%= f.input :zip, input_html: { placeholder:"Zip" }, label: false %>
+          <div class="column">
+            <label for="cardnumber">Minimum Grade</label>
+            <%= f.input :min_grade, as: :integer, input_html: { placeholder:"Minimum Grade" }, label: false %>
+          </div>
+          <div class="column">
+            <label for="cardholder">Maximum Grade</label>
+            <%= f.input :max_grade, as: :integer, input_html: { placeholder:" Grade" }, label: false %>
+          </div>
+        </div>
+      </div>
+      <%= f.button :submit, class: 'secondary button radius expanded' %>
+      <%= link_to 'Cancel', schools_path, :class => 'button alert expanded' %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+</div>
 <% end %>
