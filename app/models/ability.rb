@@ -76,8 +76,8 @@ class Ability
       can :show, Item, :active => true
 
       # can see list/details of their own past orders
-      can :index, Order, :user_id => User.id
-      can :show, Order, :user_id => User.id
+      can :index, Order, :user_id => user.id
+      can :show, Order, :user_id => user.id
 
       # can add their schools
       can :create, School
