@@ -5,14 +5,21 @@
 
 <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
     <li data-accordion-item>
-        <a href="#" class="accordion-title"><h3>PIECES</h3></a>
+        <!--<a href="#" class="accordion-title"><h3>PIECES</h3></a>-->
+        <h3><%= link_to  "PIECES", :controller => 'items', :category => 'pieces' %></h3>
         <div class="accordion-content" data-tab-content>
-            <a><h4>brown</h4></a>
+            <h4><%= link_to  "brown", :controller => 'items', :category => 'pieces', :color => 'brown' %></h4>
+            <h4><%= link_to  "green", :controller => 'items', :category => 'pieces', :color => 'green' %></h4>
+            <h4><%= link_to  "black", :controller => 'items', :category => 'pieces', :color => 'black' %></h4>
+            <h4><%= link_to  "white", :controller => 'items', :category => 'pieces', :color => 'white' %></h4>
+            <h4><%= link_to  "red", :controller => 'items', :category => 'pieces', :color => 'red' %></h4>
+            <h4><%= link_to  "wood", :controller => 'items', :category => 'pieces', :color => 'wood' %></h4>
+            <!--<a><h4>brown</h4></a>
             <a><h4>green</h4></a>
             <a><h4>black</h4></a>
             <a><h4>white</h4></a>
             <a><h4>red</h4></a>
-            <a><h4>wood</h4></a>
+            <a><h4>wood</h4></a>-->
         </div>
     </li>
     <li data-accordion-item>
