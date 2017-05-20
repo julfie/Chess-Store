@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  include Filterable
 
   mount_uploader :photo, PhotoUploader
 
@@ -18,6 +19,7 @@ class Item < ActiveRecord::Base
   scope :for_category, ->(category) { where(category: category) }
   scope :for_color,    ->(color) { where("color like ?", "%#{color.downcase}%") }
   scope :need_reorder, ->{ where("reorder_level >= inventory_level") }
+  scope :starts_with, -> (name) { where("name like ?", "#{name}%")}
   
   # Validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
