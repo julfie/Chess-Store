@@ -545,8 +545,14 @@ thead {
   border: 0px;
 }
 
+#index.card.item {
+  width: 16%;
+  margin: auto;
+}
+
 .card-divider {
   padding: 0.5rem;
+  height: 125px;
 }
 
 .card-divider p {
