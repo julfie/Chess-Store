@@ -4,13 +4,21 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    # get info on active items for the big three...
-    @items = Item.active.filter(params.slice(:category, :color, :starts_with)).alphabetical.paginate(:page => params[:page]).per_page(10)
-
-    # @boards = Item.active.for_category('boards').alphabetical.paginate(:page => params[:page]).per_page(10)
-    # @pieces = Item.active.for_category('pieces').alphabetical.paginate(:page => params[:page]).per_page(10)
-    # @clocks = Item.active.for_category('clocks').alphabetical.paginate(:page => params[:page]).per_page(10)
-    # @supplies = Item.active.for_category('supplies').alphabetical.paginate(:page => params[:page]).per_page(10)    
+    # get info on active items for filtering...
+    @items = Item.active.filter(params.slice(:for_category, :for_color, :starts_with)).alphabetical.paginate(:page => params[:page]).per_page(10)
+    
+    #ordering options
+    case params[:ordered]
+      when 'price'
+        # @items = @items.includes(:item_prices).reorder(item_price.current).paginate(:page => params[:page]).per_page(10)
+        # @items = @items.price_order.paginate(:page => params[:page]).per_page(10)
+      when 'inventory'
+        @items = @items.reorder(:inventory_level).paginate(:page => params[:page]).per_page(10)
+      when 'popularity'
+        @items = @items.includes(:order_item).reorder('count_all desc').count('id').paginate(:page => params[:page]).per_page(10)
+      when 'name'
+        @items = @items.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end
     # get a list of any inactive items for sidebar
     if logged_in?
       if (current_user.role? :admin) || (current_user.role? :manager)

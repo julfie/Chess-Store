@@ -1,8 +1,10 @@
 <% unless items.nil? || items.empty? %>
-  <h5 id="item-type"><%= item_type.capitalize %></h5>
+  <h5 id="item-type">
+    <%= items.first.category.capitalize %> / <%= items.first.color %>
+  </h5>
   <div data-equalizer>
     <% items.each do |item| %>
-      <div class="card item" data-equalizer-watch>
+      <div class="card item" id="index" data-equalizer-watch>
           <% if item.photo_url.nil? %>
             <%= image_tag 'img_not_available.png', class: 'item_show_img' %>
           <% else %>

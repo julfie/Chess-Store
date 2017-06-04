@@ -5,54 +5,55 @@
 
 <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
     <li data-accordion-item>
-        <!--<a href="#" class="accordion-title"><h3>PIECES</h3></a>-->
-        <h3><%= link_to  "PIECES", :controller => 'items', :category => 'pieces' %></h3>
+        <%= link_to({ :controller => 'items', action: "index", :for_category => 'pieces' }, class: "accordion-title")do %>
+            <h3>PIECES</h3>
+        <% end %>
         <div class="accordion-content" data-tab-content>
-            <h4><%= link_to  "brown", :controller => 'items', :category => 'pieces', :color => 'brown' %></h4>
-            <h4><%= link_to  "green", :controller => 'items', :category => 'pieces', :color => 'green' %></h4>
-            <h4><%= link_to  "black", :controller => 'items', :category => 'pieces', :color => 'black' %></h4>
-            <h4><%= link_to  "white", :controller => 'items', :category => 'pieces', :color => 'white' %></h4>
-            <h4><%= link_to  "red", :controller => 'items', :category => 'pieces', :color => 'red' %></h4>
-            <h4><%= link_to  "wood", :controller => 'items', :category => 'pieces', :color => 'wood' %></h4>
-            <!--<a><h4>brown</h4></a>
-            <a><h4>green</h4></a>
-            <a><h4>black</h4></a>
-            <a><h4>white</h4></a>
-            <a><h4>red</h4></a>
-            <a><h4>wood</h4></a>-->
+            <h4><%= link_to  "brown", :controller => 'items', :for_category => 'pieces', :for_color => 'brown' %></h4>
+            <h4><%= link_to  "green", :controller => 'items', :for_category => 'pieces', :for_color => 'green' %></h4>
+            <h4><%= link_to  "black", :controller => 'items', :for_category => 'pieces', :for_color => 'black' %></h4>
+            <h4><%= link_to  "white", :controller => 'items', :for_category => 'pieces', :for_color => 'white' %></h4>
+            <h4><%= link_to  "red", :controller => 'items', :for_category => 'pieces', :for_color => 'red' %></h4>
+            <h4><%= link_to  "wood", :controller => 'items', :for_category => 'pieces', :for_color => 'wood' %></h4>
         </div>
     </li>
     <li data-accordion-item>
-        <a href="#" class="accordion-title"><h3>CLOCKS</h3></a>
+        <%= link_to({ :controller => 'items', action: "index", :for_category => 'clocks' }, class: "accordion-title")do %>
+            <h3>CLOCKS</h3>
+        <% end %>
         <div class="accordion-content" data-tab-content>
-            <a><h4>brown</h4></a>
-            <a><h4>green</h4></a>
-            <a><h4>black</h4></a>
-            <a><h4>white</h4></a>
-            <a><h4>red</h4></a>
-            <a><h4>wood</h4></a>
+            <h4><%= link_to  "brown", :controller => 'items', :for_category => 'clocks', :for_color => 'brown' %></h4>
+            <h4><%= link_to  "green", :controller => 'items', :for_category => 'clocks', :for_color => 'green' %></h4>
+            <h4><%= link_to  "black", :controller => 'items', :for_category => 'clocks', :for_color => 'black' %></h4>
+            <h4><%= link_to  "white", :controller => 'items', :for_category => 'clocks', :for_color => 'white' %></h4>
+            <h4><%= link_to  "red", :controller => 'items', :for_category => 'clocks', :for_color => 'red' %></h4>
+            <h4><%= link_to  "wood", :controller => 'items', :for_category => 'clocks', :for_color => 'wood' %></h4>
         </div>
     </li>
     <li data-accordion-item>
-        <a href="#" class="accordion-title"><h3>BOARDS</h3></a>
+        <%= link_to({ :controller => 'items', action: "index", :for_category => 'boards' }, class: "accordion-title")do %>
+            <h3>BOARDS</h3>
+        <% end %>
         <div class="accordion-content" data-tab-content>
-            <a><h4>brown</h4></a>
-            <a><h4>green</h4></a>
-            <a><h4>black</h4></a>
-            <a><h4>white</h4></a>
-            <a><h4>red</h4></a>
-            <a><h4>wood</h4></a>
+            <h4><%= link_to  "brown", :controller => 'items', :for_category => 'boards', :for_color => 'brown' %></h4>
+            <h4><%= link_to  "green", :controller => 'items', :for_category => 'boards', :for_color => 'green' %></h4>
+            <h4><%= link_to  "black", :controller => 'items', :for_category => 'boards', :for_color => 'black' %></h4>
+            <h4><%= link_to  "white", :controller => 'items', :for_category => 'boards', :for_color => 'white' %></h4>
+            <h4><%= link_to  "red", :controller => 'items', :for_category => 'boards', :for_color => 'red' %></h4>
+            <h4><%= link_to  "wood", :controller => 'items', :for_category => 'boards', :for_color => 'wood' %></h4>
         </div>
     </li>
     <li data-accordion-item>
-        <a href="#" class="accordion-title"><h3>SUPPLIES</h3></a>
+        <%= link_to({ :controller => 'items', action: "index", :for_category => 'supplies' }, class: "accordion-title")do %>
+            <h3>SUPPLIES</h3>
+        <% end %>
         <div class="accordion-content" data-tab-content>
-            <a><h4>brown</h4></a>
-            <a><h4>green</h4></a>
-            <a><h4>black</h4></a>
-            <a><h4>white</h4></a>
-            <a><h4>red</h4></a>
-            <a><h4>wood</h4></a>
+            <h4><%= link_to  "brown", :controller => 'items', :for_category => 'supplies', :for_color => 'brown' %></h4>
+            <h4><%= link_to  "green", :controller => 'items', :for_category => 'supplies', :for_color => 'green' %></h4>
+            <h4><%= link_to  "black", :controller => 'items', :for_category => 'supplies', :for_color => 'black' %></h4>
+            <h4><%= link_to  "white", :controller => 'items', :for_category => 'supplies', :for_color => 'white' %></h4>
+            <h4><%= link_to  "red", :controller => 'items', :for_category => 'supplies', :for_color => 'red' %></h4>
+            <h4><%= link_to  "wood", :controller => 'items', :for_category => 'supplies', :for_color => 'wood' %></h4>
         </div>
     </li>
 </ul>
@@ -75,7 +76,9 @@
                     </div>
                 </div>
 
-            <h4 style='padding-top: 3em;'>AVAILABILITY</h4>
+                <br><br>
+
+            <!--<h4 style='padding-top: 3em;'>AVAILABILITY</h4>
                 <div class="slider" data-slider data-initial-start="0" data-end="80" data-step="5">
                     <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
                     <span class="slider-fill" data-slider-fill></span>
@@ -85,7 +88,7 @@
                         <input type="number" id='slider-out' style='margin-right: 2rem;'>
                         <input type="number" id='slider-out'>
                     </div>
-                </div>
+                </div>-->
         </div>
     </li>
 </ul>

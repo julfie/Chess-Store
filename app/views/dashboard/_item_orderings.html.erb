@@ -5,17 +5,30 @@
     <li class="is-active" data-accordion-item>
         <a href="#" class="accordion-title"><h3>ORDER BY</h3></a>
         <div class="accordion-content" data-tab-content>
-            <a><h4>Name</h4></a>
-            <a><h4>Price</h4></a>
-            <a><h4>Inventory</h4></a>
-            <a><h4>Popularity</h4></a>
+            <%= link_to({ :controller => 'items', action: "index", :ordered => 'name' })do%>
+                <h4>Name</h4>
+            <% end %>
+            <%= link_to({ :controller => 'items', action: "index", :ordered => 'price' })do%>
+                <h4>Price</h4>
+            <% end %>
+            <%= link_to({ :controller => 'items', action: "index", :ordered => 'popularity' })do%>
+                <h4>Popularity</h4>
+            <% end %>
+            <% if can? :manage, Item %>
+                <%= link_to({ :controller => 'items', action: "index", :ordered => 'inventory' })do%>
+                    <h4>Inventory</h4>
+                <% end %>
+            <% end %>
         </div>
     </li>
-    <li class="is-active" data-accordion-item>
-        <a href="#" class="accordion-title"><h3>View</h3></a>
-        <div class="accordion-content" data-tab-content>
-            <a><h4>Active</h4></a>
-            <a><h4>Inactive</h4></a>
-        </div>
-    </li>
+
+    <% if can? :manage, Item %>
+        <li class="is-active" data-accordion-item>
+            <a href="#" class="accordion-title"><h3>View</h3></a>
+            <div class="accordion-content" data-tab-content>
+                <a><h4>Active</h4></a>
+                <a><h4>Inactive</h4></a>
+            </div>
+        </li>
+    <% end %>
 </ul>
