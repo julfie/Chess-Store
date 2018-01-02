@@ -10,8 +10,7 @@ class ItemsController < ApplicationController
     #ordering options
     case params[:ordered]
       when 'price'
-        # @items = @items.includes(:item_prices).reorder(item_price.current).paginate(:page => params[:page]).per_page(10)
-        # @items = @items.price_order.paginate(:page => params[:page]).per_page(10)
+        @items = @items.joins(:item_prices).order('item_prices.price').paginate(:page => params[:page]).per_page(10)
       when 'inventory'
         @items = @items.reorder(:inventory_level).paginate(:page => params[:page]).per_page(10)
       when 'popularity'
