@@ -1,6 +1,11 @@
 <% unless items.nil? || items.empty? %>
   <h5 id="item-type">
-    <%= items.first.category.capitalize %> / <%= items.first.color %>
+    <% if request.path_info.include?('category') %>
+      <%= items.first.category.capitalize %> / 
+    <% end %>
+    <% if request.path_info.include?('color') %>
+      <%= items.first.color %> / 
+    <% end %>
   </h5>
   <div data-equalizer>
     <% items.each do |item| %>

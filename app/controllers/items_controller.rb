@@ -14,7 +14,8 @@ class ItemsController < ApplicationController
       when 'inventory'
         @items = @items.reorder(:inventory_level).paginate(:page => params[:page]).per_page(10)
       when 'popularity'
-        @items = @items.includes(:order_item).reorder('count_all desc').count('id').paginate(:page => params[:page]).per_page(10)
+        # @items = @items.includes(:order_item).reorder('count_all desc').count('id').paginate(:page => params[:page]).per_page(10)
+        @items = @items.joins(:order_item).order('count(item_id) desc')
       when 'name'
         @items = @items.alphabetical.paginate(:page => params[:page]).per_page(10)
     end
